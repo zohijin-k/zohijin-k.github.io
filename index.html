@@ -40,7 +40,7 @@
 html{scroll-behavior:smooth}
 [id]{scroll-margin-top:96px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-variant-numeric:tabular-nums;font-size:16px;line-height:1.7;letter-spacing:-.01em;
+body{word-break:keep-all;overflow-wrap:break-word;background:var(--bg);color:var(--fg);font-family:var(--sans);font-variant-numeric:tabular-nums;font-size:16px;line-height:1.7;letter-spacing:-.01em;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .wrap{max-width:1280px;margin:0 auto}
 a{color:inherit}
@@ -391,6 +391,32 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
   #pr3{grid-template-columns:minmax(0,1fr)!important}
 }
 @media (max-width:640px){
+  body{font-size:15px}
+  .hero h1{font-size:29px!important}
+  .hero .sub{font-size:14.5px!important;max-width:21em!important}
+  .school{font-size:14px}
+  .hashtags li{font-size:13px;padding:5px 12px}
+  .sec-head h2{font-size:25px}
+  .card-title h3{font-size:23px!important}
+  .card-desc{font-size:14.5px}
+  .card-award{font-size:13px}
+  .impl{font-size:13px}
+  .page-head h1{font-size:34px}
+  .d-head h1{font-size:38px}
+  .d-head .sub{font-size:16px}
+  .d-head .lede{font-size:14.5px}
+  .d-meta{font-size:13.5px}
+  .d-sec h2{font-size:21px}
+  .d-sec p{font-size:15px;line-height:1.8}
+  .d-sec li{font-size:14.5px}
+  .about .intro{font-size:16px}
+  .about .intro p+p{font-size:14.5px}
+  .pr h3{font-size:16.5px}
+  .pr p{font-size:13.5px}
+  .awards div{font-size:14px}
+  .rd{font-size:14px}
+  .pg h3{font-size:19px}
+  .c-rows div{font-size:15px}
   .hero{padding-block:40px 48px;gap:0}
   .avatar{width:156px;height:156px;font-size:48px;margin-bottom:28px}
   .hero .eyebrow{justify-content:center;font-size:11.5px}
