@@ -18,7 +18,7 @@
 /* Layout: 밝은 바탕 + 파스텔 커버 카드 2열 그리드, 블루는 행동 유도에만 */
 :root{
   --bg:#F9F9F7; --surface:#FFFFFF; --fg:#1E2422; --muted:#6B716E; --line:#E4E5E1;
-  --blue:#0054A6; --on-blue:#FFFFFF;
+  --blue:#0054A6; --tint:#EEEEEB; --navy:#16213A; --on-blue:#FFFFFF;
   --mint:#C8EEDC; --butter:#F5E89C; --lav:#DCE6FC; --peach:#D3EEF0;
   --code-bg:#1F2A26; --code-fg:#E6EEEA; --code-dim:#7D8C86; --code-str:#F2E58C;
   --sans:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
@@ -27,12 +27,12 @@
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#111413; --surface:#191D1B; --fg:#ECEEEB; --muted:#9AA19D; --line:#2A2F2C;
-  --blue:#7FB0E8; --on-blue:#0E1220;
+  --blue:#7FB0E8; --tint:#1A1E1C; --navy:#2A3A5E; --on-blue:#0E1220;
   --mint:#1E3A2E; --butter:#3B3520; --lav:#1F2A45; --peach:#183436;
   --code-bg:#0B0F0D; --code-fg:#E6EEEA; --code-dim:#6B7974; --code-str:#EADB7A; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#111413; --surface:#191D1B; --fg:#ECEEEB; --muted:#9AA19D; --line:#2A2F2C;
-  --blue:#7FB0E8; --on-blue:#0E1220;
+  --blue:#7FB0E8; --tint:#1A1E1C; --navy:#2A3A5E; --on-blue:#0E1220;
   --mint:#1E3A2E; --butter:#3B3520; --lav:#1F2A45; --peach:#183436;
   --code-bg:#0B0F0D; --code-fg:#E6EEEA; --code-dim:#6B7974; --code-str:#EADB7A; color-scheme:dark}
 
@@ -288,11 +288,13 @@ nav .sheet{display:none}
 @media (max-width:900px){
   .nav-links{display:none}
   .menu-btn{display:grid}
-  nav{z-index:25}
-  nav .sheet.open{display:block;position:absolute;left:0;right:0;top:100%;background:var(--bg);padding:12px max(24px,env(safe-area-inset-left,0px)) 28px;box-shadow:0 16px 32px rgba(17,20,19,.10);max-height:calc(100vh - 80px);overflow-y:auto}
-  .sheet a.item{display:block;padding:18px 4px;text-decoration:none;font-size:19px;font-weight:700;letter-spacing:-.02em}
-  .sheet a.item[aria-current="page"]{color:var(--blue)}
-  .sheet .sheet-cta{display:block;width:100%;margin-top:16px;padding:18px;border:0;border-radius:999px;background:var(--fg);color:var(--bg);font:700 17px var(--sans);cursor:pointer}
+  nav{z-index:25;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+  nav .wrap{border-bottom-color:transparent}
+  nav:has(.sheet.open){background:var(--tint)}
+  nav .sheet.open{display:block;position:absolute;left:0;right:0;top:100%;background:var(--surface);padding:12px 12px 24px;box-shadow:0 18px 36px rgba(17,20,19,.12);max-height:calc(100vh - 80px);overflow-y:auto}
+  .sheet a.item{display:block;padding:20px 22px;border:2px solid transparent;border-radius:16px;text-decoration:none;font-size:17px;font-weight:500;letter-spacing:-.01em;color:var(--fg)}
+  .sheet a.item[aria-current="page"]{border-color:var(--blue)}
+  .sheet .sheet-cta{display:block;width:calc(100% - 20px);margin:16px auto 0;padding:16px;border:0;border-radius:999px;background:var(--navy);color:#fff;font:500 16px var(--sans);cursor:pointer;box-shadow:0 8px 20px rgba(11,37,69,.18)}
 }
 
 /* hero extras */
@@ -475,7 +477,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
         <button type="button" class="btn" data-contact>Contact</button>
       </div>
       <div class="icons">
-        <a href="mailto:se1106@jbnu.ac.kr" aria-label="이메일"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></a>
+        <a href="mailto:se1106@jbnu.ac.kr" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></a>
         <a href="https://github.com/zohijin-k" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
         <a href="files/cv-ko.pdf" target="_blank" rel="noopener" aria-label="CV PDF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></a>
       </div>
@@ -495,10 +497,10 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 
   <section class="sec" id="work">
     <div class="sec-head">
-      <div><div class="sec-label"><span class="n">01</span><span class="label">Selected Work</span></div><h2>핵심 프로젝트 4선</h2></div>
+      <div><h2>대표 프로젝트</h2></div>
     </div>
     <div class="grid" id="featured"></div>
-    <div class="all-link"><a class="btn" href="#projects">전체 프로젝트 보기 <svg class="arrow" aria-hidden="true"><use href="#ar"/></svg></a></div>
+    <div class="all-link"><a class="btn" href="#projects">More projects <svg class="arrow" aria-hidden="true"><use href="#ar"/></svg></a></div>
   </section>
 
 
@@ -514,9 +516,9 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
   </header>
   <div class="profile">
     <dl class="facts">
-      <div><dt>소속</dt><dd>전북대학교 컴퓨터인공지능학부 (2024 입학)</dd></div>
-      <div><dt>분야</dt><dd>서비스 개발, AI 서비스 설계, 공공데이터 활용</dd></div>
-      <div><dt>이메일</dt><dd><a href="mailto:se1106@jbnu.ac.kr">se1106@jbnu.ac.kr</a></dd></div>
+      <div><dt>School</dt><dd>전북대학교 컴퓨터인공지능학부 (2024 입학)</dd></div>
+      <div><dt>Focus</dt><dd>서비스 개발, AI 서비스 설계, 공공데이터 활용</dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:se1106@jbnu.ac.kr">se1106@jbnu.ac.kr</a></dd></div>
       <div><dt>GitHub</dt><dd><a href="https://github.com/zohijin-k" target="_blank" rel="noopener">github.com/zohijin-k ↗</a></dd></div>
       <div><dt>CV</dt><dd><a href="files/cv-ko.pdf" target="_blank" rel="noopener">국문 CV ↗</a>&nbsp;&nbsp;<a href="files/cv-en.pdf" target="_blank" rel="noopener">English CV ↗</a></dd></div>
     </dl>
@@ -555,34 +557,34 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 <main id="v-projects" class="wrap view" hidden>
   <header class="page-head">
     <span class="count" id="c-projects"></span>
-    <h1>전체 프로젝트</h1>
+    <h1>Projects</h1>
   </header>
   <div class="filters" id="filters" role="group" aria-label="프로젝트 분류">
-    <button type="button" data-f="all" aria-pressed="true">전체 <small></small></button>
-    <button type="button" data-f="personal" aria-pressed="false">개인 <small></small></button>
-    <button type="button" data-f="team" aria-pressed="false">팀 <small></small></button>
-    <button type="button" data-f="awards" aria-pressed="false">수상 <small></small></button>
+    <button type="button" data-f="all" aria-pressed="true">All <small></small></button>
+    <button type="button" data-f="personal" aria-pressed="false">Solo <small></small></button>
+    <button type="button" data-f="team" aria-pressed="false">Team <small></small></button>
+    <button type="button" data-f="awards" aria-pressed="false">Awards <small></small></button>
   </div>
   <div class="grid" id="list-projects"></div>
 </main>
 <main id="v-personal" class="wrap view" hidden>
   <header class="page-head">
     <span class="count" id="c-personal"></span>
-    <h1>개인 프로젝트</h1>
+    <h1>Solo</h1>
   </header>
   <div class="grid" id="list-personal"></div>
 </main>
 <main id="v-team" class="wrap view" hidden>
   <header class="page-head">
     <span class="count" id="c-team"></span>
-    <h1>팀 프로젝트</h1>
+    <h1>Team</h1>
   </header>
   <div class="grid" id="list-team"></div>
 </main>
 <main id="v-awards" class="wrap view" hidden>
   <header class="page-head">
     <span class="count" id="c-awards"></span>
-    <h1>수상 프로젝트</h1>
+    <h1>Awards</h1>
   </header>
   <div class="awards" style="margin:0 0 72px">
     <div><span class="y">2026</span><span>오픈소스 SW 해커톤 최우수상 (전북대학교 AI대학장상)</span><a class="p" href="#chaeum">채움</a></div>
@@ -598,11 +600,11 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 <main id="v-contact" class="wrap view" hidden>
   <header class="page-head" style="border:0;margin-bottom:0;padding-bottom:16px">
     <span class="label">Contact</span>
-    <h1>연락처</h1>
+    <h1>Contact</h1>
   </header>
   <dl class="c-rows">
-    <div><dt>Email</dt><dd class="mail">se1106@jbnu.ac.kr</dd><span class="c-act"><button type="button" class="copy" data-copy="se1106@jbnu.ac.kr">주소 복사</button><a href="mailto:se1106@jbnu.ac.kr">메일 쓰기 ↗</a></span></div>
-    <div><dt>GitHub</dt><dd>github.com/zohijin-k</dd><a href="https://github.com/zohijin-k" target="_blank" rel="noopener">저장소 보기 ↗</a></div>
+    <div><dt>Email</dt><dd class="mail">se1106@jbnu.ac.kr</dd><span class="c-act"><button type="button" class="copy" data-copy="se1106@jbnu.ac.kr">Copy</button><a href="mailto:se1106@jbnu.ac.kr">Send ↗</a></span></div>
+    <div><dt>GitHub</dt><dd>github.com/zohijin-k</dd><a href="https://github.com/zohijin-k" target="_blank" rel="noopener">Open ↗</a></div>
     <div><dt>CV</dt><dd>국문 · English CV (A4 1쪽)</dd><span><a href="files/cv-ko.pdf" target="_blank" rel="noopener">국문 ↗</a>&nbsp;&nbsp;<a href="files/cv-en.pdf" target="_blank" rel="noopener">English ↗</a></span></div>
     <div><dt>Location</dt><dd>전주 · 전북대학교 컴퓨터인공지능학부</dd><span></span></div>
   </dl>
@@ -614,22 +616,22 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 <button type="button" class="fab" id="fab" aria-label="연락하기" aria-expanded="false" aria-controls="pop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></button>
 <div class="pop" id="pop" role="dialog" aria-label="Contact" hidden>
   <h3>Contact</h3>
-  <div class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><div><small>이메일</small><b class="mail">se1106@jbnu.ac.kr</b></div><button type="button" class="copy" data-copy="se1106@jbnu.ac.kr">복사</button></div>
-  <a class="pc" href="https://github.com/zohijin-k" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><div><small>GitHub</small><b>zohijin-k</b></div><span class="go">열기 ↗</span></a>
-  <a class="pc" href="files/cv-ko.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><div><small>CV</small><b>국문 PDF</b></div><span class="go">열기 ↗</span></a>
+  <div class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><div><small>Email</small><b class="mail">se1106@jbnu.ac.kr</b></div><button type="button" class="copy" data-copy="se1106@jbnu.ac.kr">Copy</button></div>
+  <a class="pc" href="https://github.com/zohijin-k" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><div><small>GitHub</small><b>zohijin-k</b></div><span class="go">Open ↗</span></a>
+  <a class="pc" href="files/cv-ko.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><div><small>CV</small><b>국문 · English PDF</b></div><span class="go">Open ↗</span></a>
 </div>
 <div class="scrim" id="scrim" hidden></div>
 <footer class="wrap">
   <div class="foot-top">
     <a class="logo" href="#home">zohijin.dev</a>
     <div class="foot-links">
-      <a href="#about">소개</a>
-      <a href="#projects">전체 프로젝트</a>
-      <a href="#personal">개인 프로젝트</a>
-      <a href="#team">팀 프로젝트</a>
-      <a href="#awards">수상</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#personal">Solo</a>
+      <a href="#team">Team</a>
+      <a href="#awards">Awards</a>
       <a href="https://github.com/zohijin-k" target="_blank" rel="noopener">GitHub ↗</a>
-      <a href="mailto:se1106@jbnu.ac.kr">이메일 ↗</a>
+      <a href="mailto:se1106@jbnu.ac.kr">Email ↗</a>
       <a href="files/cv-ko.pdf" target="_blank" rel="noopener">CV ↗</a>
     </div>
     <a class="top-link" href="#" id="toTop">맨 위로 <span aria-hidden="true">↑</span></a>
@@ -640,7 +642,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 <script>
 const AR='<svg class="arrow" aria-hidden="true"><use href="#ar"/></svg>';
 const P={
-eaai:{cat:'personal',color:'c-lav',kind:'Multi-Agent · Public Data',year:'2026',scope:'개인',title:'EAAI',sub:'Export Agent AI',
+eaai:{cat:'personal',color:'c-lav',kind:'Multi-Agent · Public Data',year:'2026',scope:'Solo',title:'EAAI',sub:'Export Agent AI',
  award:'산업통상부 공공데이터 활용 공모전 우수상 (한국무역보험공사 사장상)',
  desc:'중소기업의 수출 대상국 선정과 진출 전략 수립을 지원하는 멀티 에이전트 플랫폼',
  tags:['React','FastAPI','K-SURE API'],impl:'멀티 에이전트 · 위험지수 연동 · PDF 보고서',
@@ -657,7 +659,7 @@ eaai:{cat:'personal',color:'c-lav',kind:'Multi-Agent · Public Data',year:'2026'
   {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/eaai-landing.jpg','메인 화면'],['img/eaai.jpg','분석 결과 · 추천 국가와 수출 적합도 점수']]}},
   {l:'Result',h:'결과',p:['추천 국가 랭킹, 추천 근거, 진출 전략, 5단계 실행 로드맵을 한 화면에서 제공하고 PDF 보고서로 내보냅니다.']}
  ]},
-tripick:{cat:'team',color:'c-butter',kind:'Location · Travel',year:'2026',scope:'팀',title:'TRIPICK',sub:'GPS 기반 여행 코스 검증 플랫폼',
+tripick:{cat:'team',color:'c-butter',kind:'Location · Travel',year:'2026',scope:'Team',title:'TRIPICK',sub:'GPS 기반 여행 코스 검증 플랫폼',
  desc:'실제 이동 기록으로 검증한 전주 여행 코스를 추천하는 참여형 관광 플랫폼',
  tags:['React Native','Expo','TourAPI'],impl:'GPS 체크인 · 신뢰도 점수 · 캐싱 프록시',
  cover:{type:'phones',imgs:[['img/tripick.jpg','TRIPICK 홈 화면'],['img/tripick-trace.jpg','TRIPICK 코스 수행 화면']]},
@@ -673,7 +675,7 @@ tripick:{cat:'team',color:'c-butter',kind:'Location · Travel',year:'2026',scope
   {l:'Screens',h:'주요 화면',gallery:{type:'phone',items:[['img/tripick.jpg','홈'],['img/tripick-detail.jpg','코스 상세'],['img/tripick-trace.jpg','코스 수행']]}},
   {l:'Result',h:'결과',p:['웹과 공개 베타 API를 배포했으며, Android 앱은 스토어 심사 중입니다.']}
  ]},
-jon:{cat:'team',color:'c-mint',kind:'Public Data · Career',year:'2026',scope:'팀',title:'J:ON',sub:'전북 청년 취업 내비게이션',
+jon:{cat:'team',color:'c-mint',kind:'Public Data · Career',year:'2026',scope:'Team',title:'J:ON',sub:'전북 청년 취업 내비게이션',
  award:'제3회 호남권 SW 창업 아이디어 경진대회 장려상',
  desc:'지원 가능한 공고와 지원을 막는 조건을 공공데이터로 계산해 보여주는 취업 내비게이션',
  tags:['JavaScript','Python','공공데이터'],impl:'차단요인 역산 · 국민연금 교차검증 · 자동 검증',
@@ -689,7 +691,7 @@ jon:{cat:'team',color:'c-mint',kind:'Public Data · Career',year:'2026',scope:'�
    stats:[['36건','지원 가능'],['115건','조건 1개 충족 시 추가'],['11개','자동 검증 항목']]},
   {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/jon.jpg','메인'],['img/jon-blockers.jpg','차단 요인 분석'],['img/jon-position.jpg','나의 위치'],['img/jon-strengths.jpg','보유 역량']]}}
  ]},
-gsb:{cat:'personal',color:'c-peach',kind:'Fintech · Rule + LLM',year:'2026',scope:'개인',title:'GSBP',sub:'Good Standing Bridge',
+gsb:{cat:'personal',color:'c-peach',kind:'Fintech · Rule + LLM',year:'2026',scope:'Solo',title:'GSBP',sub:'Good Standing Bridge',
  desc:'국내 체류 외국인 대상 명의대여 사기 메시지를 판별하고 근거를 설명하는 서비스',
  tags:['Next.js','TypeScript','Claude API'],impl:'규칙 엔진 판정 · AI 근거 생성 · 이중언어',
  cover:{type:'phones',imgs:[['img/gsb-3.jpg','GSBP 메시지 판별 화면'],['img/gsb-1.jpg','GSBP 진단 화면']]},
@@ -703,7 +705,7 @@ gsb:{cat:'personal',color:'c-peach',kind:'Fintech · Rule + LLM',year:'2026',sco
   {l:'Screens',h:'주요 화면',gallery:{type:'phone',items:[['img/gsb-0.jpg','프로필 선택'],['img/gsb-4.jpg','체류자격별 금융 정보'],['img/gsb-1.jpg','진단'],['img/gsb-2.jpg','은행별 경로'],['img/gsb-6.jpg','서류 체크리스트'],['img/gsb-3.jpg','메시지 판별']]}},
   {l:'Result',h:'결과',p:['회원가입 없이 사용하는 웹 서비스로 배포했으며, 한국어 · 영어 전환과 요청 제한, 키보드 접근성을 지원합니다.']}
  ]},
-chaeum:{cat:'team',color:'c-mint',kind:'Urban Data · AI',year:'2026',scope:'팀',title:'채움',sub:'원도심 공실 상가 진단 · 매칭 플랫폼',
+chaeum:{cat:'team',color:'c-mint',kind:'Urban Data · AI',year:'2026',scope:'Team',title:'채움',sub:'원도심 공실 상가 진단 · 매칭 플랫폼',
  award:'오픈소스 SW 해커톤 최우수상 (전북대학교 AI대학장상)',
  desc:'원도심 공실 상가를 진단해 적합 업종을 추천하고 창업자와 매물을 연결하는 플랫폼',
  tags:['Next.js','FastAPI','LangGraph'],impl:'건물 진단 · 업종 적합도 · 유동인구 지도',
@@ -718,7 +720,7 @@ chaeum:{cat:'team',color:'c-mint',kind:'Urban Data · AI',year:'2026',scope:'팀
   {l:'Role',h:'담당',p:['서비스 전체 화면의 UI를 설계 · 구현하고, LangGraph 기반 멀티 에이전트 구조를 설계했습니다.']},
   {l:'Engineering',h:'구현',p:['데이터 계층을 인터페이스로 분리해 예시 데이터를 실제 데이터로 교체할 수 있도록 설계했습니다.']}
  ]},
-speakup:{cat:'team',color:'c-lav',kind:'Realtime AI · Coaching',year:'2026',scope:'팀',title:'SpeakUp',sub:'AI Agent Communication Coach',
+speakup:{cat:'team',color:'c-lav',kind:'Realtime AI · Coaching',year:'2026',scope:'Team',title:'SpeakUp',sub:'AI Agent Communication Coach',
  award:'SW 경진대회 동상',
  desc:'음성과 시선, 자세, 표정을 실시간으로 분석하는 말하기 코칭 서비스',
  tags:['MediaPipe','Whisper','FastAPI'],impl:'실시간 코칭 · LLM 리포트 · 성장 대시보드',
@@ -732,7 +734,7 @@ speakup:{cat:'team',color:'c-lav',kind:'Realtime AI · Coaching',year:'2026',sco
   {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/speakup-home.jpg','시작 화면 · 연습 상황 선택'],['img/speakup-session.jpg','실시간 연습 · 코칭 지표와 AI 에이전트 대화'],['img/speakup-report.jpg','세션 리포트 · 점수 변화와 핵심 코칭']]}},
   {l:'Role',h:'담당',p:['세션 생성, 실시간 연습 화면, 리포트, 성장 대시보드 등 웹 프론트엔드를 담당했습니다.']}
  ]},
-tosstalk:{cat:'team',color:'c-butter',kind:'Emotion Care · Interaction',year:'2025',scope:'팀',title:'Toss-Talk',sub:'AI 감정 케어 서비스',
+tosstalk:{cat:'team',color:'c-butter',kind:'Emotion Care · Interaction',year:'2025',scope:'Team',title:'Toss-Talk',sub:'AI 감정 케어 서비스',
  award:'오픈소스 SW 해커톤 우수상',
  desc:'AI 대화와 인터랙션으로 감정 표현과 해소를 돕는 감정 케어 서비스',
  tags:['React','Vite','OpenAI API'],impl:'AI 대화 · 감정 변화 시각화 · 드래그 인터랙션',
@@ -744,7 +746,7 @@ tosstalk:{cat:'team',color:'c-butter',kind:'Emotion Care · Interaction',year:'2
   {l:'Features',h:'주요 기능',list:['AI 챗봇 대화','이용 전후 감정 상태 비교 시각화','감정을 적은 종이를 구겨 버리는 드래그 인터랙션','정원 가꾸기, 계란 깨기 미니게임']},
   {l:'Role',h:'담당',p:['서비스 기획부터 UI/UX 설계, 프론트엔드 개발, AI 챗봇 연동, 인터랙션 구현, 최종 발표까지 총괄했습니다.']}
  ]},
-haenggan:{cat:'personal',color:'c-butter',kind:'Social Reading',year:'2026',scope:'개인',title:'행간',sub:'함께 읽는 전자책 서비스',
+haenggan:{cat:'personal',color:'c-butter',kind:'Social Reading',year:'2026',scope:'Solo',title:'행간',sub:'함께 읽는 전자책 서비스',
  desc:'읽은 위치까지만 친구의 밑줄과 메모가 공개되는 함께 읽기 서비스',
  tags:['Next.js','Supabase','epub.js'],impl:'진행도 연동 공개 · 참여자별 색상 · 초대 코드',
  cover:{type:'browser',url:'행간 · space between lines',img:'img/haenggan-start.jpg',alt:'행간 시작 화면: 새로 시작하기와 초대 코드 참여'},
@@ -757,7 +759,7 @@ haenggan:{cat:'personal',color:'c-butter',kind:'Social Reading',year:'2026',scop
   {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/haenggan-start.jpg','시작 화면 · 새 행간 만들기와 초대 코드로 참여, 하이라이트 색 선택']]}},
   {l:'Next',h:'향후 계획',list:['데이터 접근 정책과 인증 강화','메모 표시 인터랙션 개선']}
  ]},
-vine:{cat:'personal',color:'c-mint',kind:'Learning Agent',year:'2026',scope:'개인',title:'VINE',sub:'학습 흐름 복귀 에이전트',
+vine:{cat:'personal',color:'c-mint',kind:'Learning Agent',year:'2026',scope:'Solo',title:'VINE',sub:'학습 흐름 복귀 에이전트',
  desc:'흩어진 학습 공지를 할 일로 정리하고 중단된 작업으로 복귀를 돕는 AI 에이전트',
  tags:['Next.js','TypeScript','Claude API'],impl:'멀티모달 분석 · 초안 생성 · 복귀 알림',
  cover:{type:'mark',label:'VINE'},
@@ -768,7 +770,7 @@ vine:{cat:'personal',color:'c-mint',kind:'Learning Agent',year:'2026',scope:'개
   {l:'Problem',h:'문제',p:['학습 정보가 여러 채널에 분산되어 정리에 시간이 들고, 작업이 한 번 중단되면 다시 시작하기 어렵습니다.']},
   {l:'Solution',h:'해결 방식',list:['PDF · 이미지 · 텍스트에서 과목, 과제, 시험, 마감을 추출해 과목별 할 일 생성','현재 진행할 작업 하나를 우선 제시','선택한 할 일의 자료 요약과 초안 구조 자동 생성','이탈 감지 후 이전 작업 상태 복원']}
  ]},
-prism:{cat:'personal',color:'c-lav',kind:'Research Tool',year:'2026',scope:'개인',title:'PRISM',sub:'논문 재현 지원 도구',
+prism:{cat:'personal',color:'c-lav',kind:'Research Tool',year:'2026',scope:'Solo',title:'PRISM',sub:'논문 재현 지원 도구',
  desc:'논문 PDF와 코드 저장소를 함께 분석해 재현 계획과 대응표를 만드는 도구',
  tags:['React','FastAPI','PDF 파싱'],impl:'구성요소 추출 · 논문 · 코드 비교 · 누락 정보 탐지',
  cover:{type:'browser',url:'prism · analyze a research paper',img:'img/prism-upload.jpg',alt:'PRISM 논문 업로드 화면'},
@@ -781,7 +783,7 @@ prism:{cat:'personal',color:'c-lav',kind:'Research Tool',year:'2026',scope:'개�
   {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/prism-upload.jpg','논문 업로드 · PDF와 선택적 코드 저장소 입력'],['img/prism-structure.jpg','요약 · 논문 섹션 구조 탐지'],['img/prism-summary.jpg','요약 · 핵심 문제, 한계, 제안 방법, 실험 결과'],['img/prism-plan.jpg','구현 계획 · 단계별 재현 로드맵']]}},
   {l:'Engineering',h:'구현',p:['PDF 파싱, 구성요소 추출, 비교 · 매핑 엔진을 모듈로 분리한 규칙 기반 구조로 구현했습니다.']}
  ]},
-spark:{cat:'personal',color:'c-peach',kind:'Taxonomy Tool',year:'2026',scope:'개인',title:'SPARK',sub:'새우류 종 동정 보조 도구',
+spark:{cat:'personal',color:'c-peach',kind:'Taxonomy Tool',year:'2026',scope:'Solo',title:'SPARK',sub:'새우류 종 동정 보조 도구',
  desc:'표본 형질을 입력하면 후보 종을 근거와 함께 순위로 제시하는 종 동정 도구',
  tags:['React 19','TypeScript','Zustand'],impl:'형질 매칭 엔진 · 국내 기록종 우선 · 신뢰도 상한',
  cover:{type:'browser',url:'spark · 표본 정보 입력',img:'img/spark-input.jpg',alt:'SPARK 표본 정보 입력 화면'},
@@ -798,7 +800,7 @@ spark:{cat:'personal',color:'c-peach',kind:'Taxonomy Tool',year:'2026',scope:'�
 };
 const FEATURED=['eaai','tripick','jon','gsb'];
 const LISTS={personal:['eaai','gsb','haenggan','vine','prism','spark'],team:['tripick','jon','chaeum','speakup','tosstalk'],awards:['eaai','chaeum','speakup','jon','tosstalk']};
-const NAMES={personal:'개인 프로젝트',team:'팀 프로젝트',awards:'수상 프로젝트'};
+const NAMES={personal:'Solo',team:'Team',awards:'Awards'};
 const ALL=['eaai','tripick','jon','gsb','chaeum','speakup','tosstalk','haenggan','vine','prism','spark'];
 const VIEWS=['home','about','projects','personal','team','awards','contact'];
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -816,7 +818,7 @@ function cardHTML(k,i){const p=P[k];const cats=Object.keys(LISTS).filter(L=>LIST
   <div class="card-meta"><span>${pad(i+1)} / ${esc(p.kind.toUpperCase())}</span><span>${esc(p.year)} · ${esc(p.scope)}</span></div>
   <div class="card-title"><h3>${esc(p.title)}</h3><span class="circle">${AR}</span></div>
   <p class="card-desc">${esc(p.desc)}</p>
-  ${p.award?`<p class="card-award"><span>수상</span>${esc(p.award)}</p>`:''}
+  ${p.award?`<p class="card-award"><span>Award</span>${esc(p.award)}</p>`:''}
   <div class="tags">${p.tags.map(t=>`<span>${esc(t)}</span>`).join('')}</div>
   <div class="impl"><b>주요 구현</b><span>${esc(p.impl)}</span></div>
 </a>`}
@@ -836,23 +838,23 @@ fbtns.forEach(b=>b.addEventListener('click',()=>{
 fbtns.forEach(b=>{const f=b.dataset.f;b.querySelector('small').textContent=f==='all'?ALL.length:LISTS[f].length});
 
 /* nav */
-const menuLinks=L=>`<a class="all" href="#${L}">전체 보기 <small>${LISTS[L].length}</small></a>`+LISTS[L].map(k=>`<a href="#${k}">${esc(P[k].title)}<small>${esc(P[k].year.split(' · ')[0])}</small></a>`).join('');
+const menuLinks=L=>`<a class="all" href="#${L}">View all <small>${LISTS[L].length}</small></a>`+LISTS[L].map(k=>`<a href="#${k}">${esc(P[k].title)}<small>${esc(P[k].year.split(' · ')[0])}</small></a>`).join('');
 document.getElementById('navlinks').innerHTML=`
-  <a href="#home" data-v="home">홈</a>
-  <a href="#about" data-v="about">소개</a>
-  <a href="#projects" data-v="projects">전체 프로젝트</a>
-  <div class="dd"><button type="button" aria-expanded="false" data-v="personal">개인 프로젝트</button><div class="menu">${menuLinks('personal')}</div></div>
-  <div class="dd"><button type="button" aria-expanded="false" data-v="team">팀 프로젝트</button><div class="menu">${menuLinks('team')}</div></div>
-  <div class="dd"><button type="button" aria-expanded="false" data-v="awards">수상</button><div class="menu">${menuLinks('awards')}</div></div>
-  <div class="dd"><button type="button" aria-expanded="false" data-v="contact">연락처</button><div class="menu"><a class="all" href="#contact">문의</a><a href="https://github.com/zohijin-k" target="_blank" rel="noopener">GitHub <small>↗</small></a><a href="mailto:se1106@jbnu.ac.kr">이메일 <small>↗</small></a><a href="files/cv-ko.pdf" target="_blank" rel="noopener">CV PDF <small>↗</small></a></div></div>`;
+  <a href="#home" data-v="home">Home</a>
+  <a href="#about" data-v="about">About</a>
+  <a href="#projects" data-v="projects">Projects</a>
+  <div class="dd"><button type="button" aria-expanded="false" data-v="personal">Solo</button><div class="menu">${menuLinks('personal')}</div></div>
+  <div class="dd"><button type="button" aria-expanded="false" data-v="team">Team</button><div class="menu">${menuLinks('team')}</div></div>
+  <div class="dd"><button type="button" aria-expanded="false" data-v="awards">Awards</button><div class="menu">${menuLinks('awards')}</div></div>
+  <div class="dd"><button type="button" aria-expanded="false" data-v="contact">Contact</button><div class="menu"><a class="all" href="#contact">Contact page</a><a href="https://github.com/zohijin-k" target="_blank" rel="noopener">GitHub <small>↗</small></a><a href="mailto:se1106@jbnu.ac.kr">Email <small>↗</small></a><a href="files/cv-ko.pdf" target="_blank" rel="noopener">CV PDF <small>↗</small></a></div></div>`;
 document.getElementById('sheet').innerHTML=`
-  <a class="item" href="#home" data-v="home">홈</a>
-  <a class="item" href="#about" data-v="about">소개</a>
-  <a class="item" href="#projects" data-v="projects">전체 프로젝트</a>
-  <a class="item" href="#personal" data-v="personal">개인 프로젝트</a>
-  <a class="item" href="#team" data-v="team">팀 프로젝트</a>
-  <a class="item" href="#awards" data-v="awards">수상</a>
-  <a class="item" href="#contact" data-v="contact">연락처</a>
+  <a class="item" href="#home" data-v="home">Home</a>
+  <a class="item" href="#about" data-v="about">About</a>
+  <a class="item" href="#projects" data-v="projects">Projects</a>
+  <a class="item" href="#personal" data-v="personal">Solo</a>
+  <a class="item" href="#team" data-v="team">Team</a>
+  <a class="item" href="#awards" data-v="awards">Awards</a>
+  <a class="item" href="#contact" data-v="contact">Contact</a>
   <button type="button" class="sheet-cta" data-contact>Contact</button>`;
 const dds=[...document.querySelectorAll('.dd')];
 const closeAll=except=>dds.forEach(d=>{if(d!==except){d.classList.remove('open');d.firstElementChild.setAttribute('aria-expanded','false')}});
@@ -912,7 +914,7 @@ function route(){
     document.getElementById('v-detail').innerHTML=detailHTML(h); show('v-detail');
     document.title=P[h].title+' · 조이진'; current=P[h].cat; window.scrollTo(0,0);
   }else if(VIEWS.includes(h)&&h!=='home'){
-    show('v-'+h); current=h; document.title=({about:'소개',contact:'연락처',projects:'전체 프로젝트',...NAMES})[h]+' · 조이진'; window.scrollTo(0,0);
+    show('v-'+h); current=h; document.title=({about:'About',contact:'Contact',projects:'Projects',...NAMES})[h]+' · 조이진'; window.scrollTo(0,0);
   }else{
     show('v-home'); document.title='조이진 포트폴리오';
     const el=h&&h!=='home'&&document.getElementById(h);
