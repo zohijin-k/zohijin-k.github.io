@@ -120,7 +120,7 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px
 .phones{display:flex;gap:18px;justify-content:center;width:100%}
 .phones img{width:36%;border-radius:20px;box-shadow:0 12px 32px rgba(30,36,34,.12)}
 .card:hover .cover .browser,.card:hover .cover .phones{transform:translateY(-6px)}
-@media (prefers-reduced-motion:no-preference){.cover .browser,.cover .phones{transition:transform .35s ease}.circle{transition:all .2s}}
+@media (prefers-reduced-motion:no-preference){.cover .browser,.cover .phones{transition:transform .35s ease}.circle{transition:all .2s}.fab{transition:opacity .2s,transform .2s}}
 .card-meta{display:flex;justify-content:space-between;gap:12px;margin-top:22px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
 .card-title{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:14px}
 .card-title h3{font-size:32px;font-weight:500;letter-spacing:-.03em}
@@ -296,6 +296,7 @@ nav .sheet{display:none}
 }
 
 /* hero extras */
+.br-m{display:none}
 .avatar{display:grid;place-items:center;width:184px;height:184px;margin:0 auto 36px;border-radius:50%;background:var(--surface);border:6px solid var(--surface);box-shadow:0 14px 36px rgba(17,20,19,.12),inset 0 0 0 1px var(--line);font-size:58px;font-weight:800;color:var(--blue);letter-spacing:-.02em}
 .hero .eyebrow{justify-content:center}
 .hero .sub{margin-inline:auto}
@@ -392,6 +393,9 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 }
 @media (max-width:640px){
   body{font-size:15px}
+  .br-m{display:inline}
+  .fab{opacity:0;pointer-events:none;transform:translateY(12px)}
+  .fab.show{opacity:1;pointer-events:auto;transform:none}
   .hero h1{font-size:29px!important}
   .hero .sub{font-size:14.5px!important;max-width:21em!important}
   .school{font-size:14px}
@@ -464,7 +468,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
       <div class="avatar" aria-hidden="true">IJ</div>
       <p class="eyebrow">Service Developer &amp; Product Planner</p>
       <h1><span class="hl">안녕하세요,</span> <em>조이진</em>입니다.</h1>
-      <p class="sub">공공데이터와 AI로 실제 문제를 풀고, 기획부터 구현과 배포까지 직접 합니다.</p>
+      <p class="sub">공공데이터와 AI로 실제 문제를 풀고,<br class="br-m"> 기획부터 구현과 배포까지 직접 합니다.</p>
       <p class="school">전북대학교 컴퓨터인공지능학부 재학</p>
       <ul class="hashtags"><li>#공공데이터</li><li>#AI 서비스</li><li>#서비스 기획</li></ul>
       <div class="ctas">
@@ -498,31 +502,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
     <div class="all-link"><a class="btn" href="#projects">전체 프로젝트 보기 <svg class="arrow" aria-hidden="true"><use href="#ar"/></svg></a></div>
   </section>
 
-  <section class="sec" id="skills">
-    <div class="sec-head">
-      <div><div class="sec-label"><span class="n">02</span><span class="label">Capabilities</span></div><h2>구현 역량</h2></div>
-    </div>
-    <div class="skills">
-      <div class="sk"><span class="mono">01 / Frontend</span><h3>화면과 인터랙션</h3><ul><li>Next.js</li><li>React</li><li>React Native</li><li>Expo</li><li>TypeScript</li><li>Tailwind</li></ul><p>TRIPICK 앱, GSBP, 행간, Toss-Talk</p></div>
-      <div class="sk"><span class="mono">02 / Backend</span><h3>API와 데이터</h3><ul><li>FastAPI</li><li>Supabase</li><li>PostgreSQL</li><li>OpenAPI 프록시</li><li>Vercel</li><li>Railway</li></ul><p>EAAI, TRIPICK, 채움</p></div>
-      <div class="sk"><span class="mono">03 / AI Service</span><h3>AI 서비스 설계</h3><ul><li>Multi-Agent</li><li>LangGraph</li><li>OpenAI API</li><li>Claude API</li><li>규칙 엔진</li><li>MediaPipe</li></ul><p>EAAI, GSBP, VINE, SpeakUp</p></div>
-      <div class="sk"><span class="mono">04 / Product</span><h3>기획과 문서</h3><ul><li>문제 정의</li><li>화면 설계</li><li>기능명세서</li><li>사업계획서</li><li>발표</li></ul><p>수상 5회</p></div>
-    </div>
-  </section>
 
-  <section class="sec" id="archive">
-    <div class="sec-head">
-      <div><div class="sec-label"><span class="n">03</span><span class="label">Portfolio</span></div><h2>바로가기</h2></div>
-    </div>
-    <div class="pages">
-      <a class="pg" href="#about"><span class="label">About</span><h3>소개</h3><span class="more">페이지 보기 →</span></a>
-      <a class="pg" href="#projects"><span class="label">Projects</span><h3>전체 프로젝트</h3><span class="more">페이지 보기 →</span></a>
-      <a class="pg" href="#personal"><span class="label">Personal</span><h3>개인 프로젝트</h3><span class="more">페이지 보기 →</span></a>
-      <a class="pg" href="#team"><span class="label">Team</span><h3>팀 프로젝트</h3><span class="more">페이지 보기 →</span></a>
-      <a class="pg" href="#awards"><span class="label">Awards</span><h3>수상</h3><span class="more">페이지 보기 →</span></a>
-      <a class="pg" href="#contact"><span class="label">Contact</span><h3>연락</h3><span class="more">페이지 보기 →</span></a>
-    </div>
-  </section>
 
 </main>
 
@@ -564,7 +544,12 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
   </div>
 
   <h2 class="sub-h"><span class="mono">03</span>기술</h2>
-  <div class="skills" id="skills-about"></div>
+  <div class="skills" id="skills-about">
+      <div class="sk"><span class="mono">01 / Frontend</span><h3>화면과 인터랙션</h3><ul><li>Next.js</li><li>React</li><li>React Native</li><li>Expo</li><li>TypeScript</li><li>Tailwind</li></ul><p>TRIPICK 앱, GSBP, 행간, Toss-Talk</p></div>
+      <div class="sk"><span class="mono">02 / Backend</span><h3>API와 데이터</h3><ul><li>FastAPI</li><li>Supabase</li><li>PostgreSQL</li><li>OpenAPI 프록시</li><li>Vercel</li><li>Railway</li></ul><p>EAAI, TRIPICK, 채움</p></div>
+      <div class="sk"><span class="mono">03 / AI Service</span><h3>AI 서비스 설계</h3><ul><li>Multi-Agent</li><li>LangGraph</li><li>OpenAI API</li><li>Claude API</li><li>규칙 엔진</li><li>MediaPipe</li></ul><p>EAAI, GSBP, VINE, SpeakUp</p></div>
+      <div class="sk"><span class="mono">04 / Product</span><h3>기획과 문서</h3><ul><li>문제 정의</li><li>화면 설계</li><li>기능명세서</li><li>사업계획서</li><li>발표</li></ul><p>수상 5회</p></div>
+    </div>
 </main>
 
 <!-- ============ LISTS ============ -->
@@ -850,7 +835,6 @@ fbtns.forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('#list-projects .card').forEach(c=>c.hidden=!(f==='all'||c.dataset.cats.split(' ').includes(f)));
 }));
 fbtns.forEach(b=>{const f=b.dataset.f;b.querySelector('small').textContent=f==='all'?ALL.length:LISTS[f].length});
-document.getElementById('skills-about').innerHTML=document.querySelector('#skills .skills').innerHTML;
 
 /* nav */
 const menuLinks=L=>`<a class="all" href="#${L}">전체 보기 <small>${LISTS[L].length}</small></a>`+LISTS[L].map(k=>`<a href="#${k}">${esc(P[k].title)}<small>${esc(P[k].year.split(' · ')[0])}</small></a>`).join('');
@@ -939,6 +923,8 @@ function route(){
   document.querySelectorAll('#navlinks [aria-current], #sheet [aria-current]').forEach(a=>a.setAttribute('aria-current','page'));
 }
 window.addEventListener('hashchange',route); route();
+const fabToggle=()=>fab.classList.toggle('show',window.scrollY>360||document.getElementById('v-home').hidden);
+window.addEventListener('scroll',fabToggle,{passive:true}); window.addEventListener('hashchange',fabToggle); fabToggle();
 document.getElementById('toTop').addEventListener('click',e=>{e.preventDefault();window.scrollTo(0,0)});
 
 /* copy */
