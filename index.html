@@ -7,6 +7,7 @@
 <meta property="og:title" content="조이진 포트폴리오">
 <meta property="og:description" content="공공데이터와 AI로 실제 문제를 풀고, 기획부터 구현과 배포까지 직접 합니다.">
 <style>:root{color-scheme:light}body{margin:0;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2070%2052%22%3E%3Cpath%20fill%3D%22%230054A6%22%20d%3D%22M9.5%2014%20L10.5%201.5%20L19.5%207.6%20Q23%206.8%2026.5%207.6%20L35.5%201.5%20L36.5%2014%20Q38.5%2018.5%2037%2023%20Q35.6%2026.6%2032.2%2028.4%20Q40.5%2033.5%2041.5%2043%20Q42%2049%2039%2051.5%20L7%2051.5%20Q4%2049%204.5%2043%20Q5.5%2033.5%2013.8%2028.4%20Q10.4%2026.6%209%2023%20Q7.5%2018.5%209.5%2014%20Z%22/%3E%3Cg%20fill%3D%22%230054A6%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.6%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M38%2036.5%20Q44%2033.5%2051%2034.5%20Q62%2036%2065.5%2043.5%20Q67.5%2048.5%2064.5%2051.5%20L36%2051.5%20Q34%2047%2035%2042.5%20Q35.8%2039%2038%2036.5%20Z%22/%3E%3Cpath%20transform%3D%22rotate%28-24%2047%2030%29%22%20d%3D%22M38.8%2025.5%20L39.8%2016.5%20L45.6%2021%20Q47.6%2020.4%2049.6%2021%20L55.4%2016.5%20L56.4%2025.5%20Q57.8%2028.5%2056.6%2031.5%20Q54.6%2035.6%2047.6%2035.6%20Q40.6%2035.6%2038.6%2031.5%20Q37.4%2028.5%2038.8%2025.5%20Z%22/%3E%3C/g%3E%3C/svg%3E">
 <title>조이진 포트폴리오</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +19,8 @@
 /* Layout: 밝은 바탕 + 파스텔 커버 카드 2열 그리드, 블루는 행동 유도에만 */
 :root{
   --bg:#F9F9F7; --surface:#FFFFFF; --fg:#1E2422; --muted:#6B716E; --line:#E4E5E1;
-  --blue:#0054A6; --tint:#EEEEEB; --navy:#16213A; --on-blue:#FFFFFF;
+  --blue:#0054A6; --tint:#EEEEEB; --navy:#16213A;
+  --paw:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22460%22%20height%3D%22460%22%20viewBox%3D%220%200%20460%20460%22%3E%3Cg%20fill%3D%22%235E6668%22%20fill-opacity%3D%22.08%22%3E%3Cg%20transform%3D%22translate%2870%2080%29%20rotate%28-18%29%20scale%281.2%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28300%20150%29%20rotate%2824%29%20scale%281.1%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28170%20320%29%20rotate%28-30%29%20scale%281.25%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28380%20390%29%20rotate%2812%29%20scale%281.05%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%2860%20410%29%20rotate%288%29%20scale%281.15%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); --on-blue:#FFFFFF;
   --mint:#C8EEDC; --butter:#F5E89C; --lav:#DCE6FC; --peach:#D3EEF0;
   --code-bg:#1F2A26; --code-fg:#E6EEEA; --code-dim:#7D8C86; --code-str:#F2E58C;
   --sans:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
@@ -27,12 +29,14 @@
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#111413; --surface:#191D1B; --fg:#ECEEEB; --muted:#9AA19D; --line:#2A2F2C;
-  --blue:#7FB0E8; --tint:#1A1E1C; --navy:#2A3A5E; --on-blue:#0E1220;
+  --blue:#7FB0E8; --tint:#1A1E1C; --navy:#2A3A5E;
+  --paw:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22460%22%20height%3D%22460%22%20viewBox%3D%220%200%20460%20460%22%3E%3Cg%20fill%3D%22%23C8CFCB%22%20fill-opacity%3D%22.06%22%3E%3Cg%20transform%3D%22translate%2870%2080%29%20rotate%28-18%29%20scale%281.2%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28300%20150%29%20rotate%2824%29%20scale%281.1%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28170%20320%29%20rotate%28-30%29%20scale%281.25%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28380%20390%29%20rotate%2812%29%20scale%281.05%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%2860%20410%29%20rotate%288%29%20scale%281.15%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); --on-blue:#0E1220;
   --mint:#1E3A2E; --butter:#3B3520; --lav:#1F2A45; --peach:#183436;
   --code-bg:#0B0F0D; --code-fg:#E6EEEA; --code-dim:#6B7974; --code-str:#EADB7A; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#111413; --surface:#191D1B; --fg:#ECEEEB; --muted:#9AA19D; --line:#2A2F2C;
-  --blue:#7FB0E8; --tint:#1A1E1C; --navy:#2A3A5E; --on-blue:#0E1220;
+  --blue:#7FB0E8; --tint:#1A1E1C; --navy:#2A3A5E;
+  --paw:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22460%22%20height%3D%22460%22%20viewBox%3D%220%200%20460%20460%22%3E%3Cg%20fill%3D%22%23C8CFCB%22%20fill-opacity%3D%22.06%22%3E%3Cg%20transform%3D%22translate%2870%2080%29%20rotate%28-18%29%20scale%281.2%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28300%20150%29%20rotate%2824%29%20scale%281.1%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28170%20320%29%20rotate%28-30%29%20scale%281.25%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28380%20390%29%20rotate%2812%29%20scale%281.05%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%2860%20410%29%20rotate%288%29%20scale%281.15%29%22%3E%3Cpath%20d%3D%22M0%203.2c-3.6%200-7%203.2-7%206.4%200%202.6%202.4%203.6%204%203.6%201.2%200%202-.6%203-.6s1.8.6%203%20.6c1.6%200%204-1%204-3.6%200-3.2-3.4-6.4-7-6.4z%22/%3E%3Cellipse%20cx%3D%22-6.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%28-20%20-6.2%20-1.2%29%22/%3E%3Cellipse%20cx%3D%22-2.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%222.3%22%20cy%3D%22-5%22%20rx%3D%222.2%22%20ry%3D%223%22/%3E%3Cellipse%20cx%3D%226.2%22%20cy%3D%22-1.2%22%20rx%3D%222.1%22%20ry%3D%222.8%22%20transform%3D%22rotate%2820%206.2%20-1.2%29%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); --on-blue:#0E1220;
   --mint:#1E3A2E; --butter:#3B3520; --lav:#1F2A45; --peach:#183436;
   --code-bg:#0B0F0D; --code-fg:#E6EEEA; --code-dim:#6B7974; --code-str:#EADB7A; color-scheme:dark}
 
@@ -40,7 +44,7 @@
 html{scroll-behavior:smooth}
 [id]{scroll-margin-top:96px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{word-break:keep-all;overflow-wrap:break-word;background:var(--bg);color:var(--fg);font-family:var(--sans);font-variant-numeric:tabular-nums;font-size:16px;line-height:1.7;letter-spacing:-.01em;
+body{word-break:keep-all;overflow-wrap:break-word;background-color:var(--bg);background-image:var(--paw);background-size:460px 460px;color:var(--fg);font-family:var(--sans);font-variant-numeric:tabular-nums;font-size:16px;line-height:1.7;letter-spacing:-.01em;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .wrap{max-width:1280px;margin:0 auto}
 a{color:inherit}
@@ -56,7 +60,28 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(-
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:24px;border-bottom:1px solid var(--line)}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:18px;font-weight:700;letter-spacing:-.02em}
-.logo b{font-family:var(--mono);color:var(--blue);font-size:24px;font-weight:500;letter-spacing:-.04em}
+.logo .cats{display:block;flex:none;width:34px;height:25px;color:var(--fg)}
+.logo:hover .cats{color:var(--blue)}
+.cats .kc{stroke:var(--bg)}
+nav:has(.sheet.open) .cats .kc{stroke:var(--tint)}
+.cats .kh{transform-box:view-box;transform-origin:44px 36px}
+@media (prefers-reduced-motion:no-preference){
+  .logo:hover .kh,.logo.nod .kh{animation:nod .9s ease-in-out}
+}
+@keyframes nod{0%{transform:rotate(0)}35%{transform:rotate(-14deg)}60%{transform:rotate(-9deg)}100%{transform:rotate(0)}}
+/* back to top */
+.top-link{background:none;border:0;cursor:pointer;font:inherit;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:10px;padding:6px 0}
+.top-link:hover{color:var(--blue)}
+.top-link svg{width:18px;height:18px}
+.pawstep{position:fixed;width:16px;height:16px;color:var(--blue);pointer-events:none;z-index:40;opacity:0;animation:step 1.1s ease forwards}
+@keyframes step{0%{opacity:0;transform:scale(.6)}25%{opacity:.85;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+/* footer signature */
+.sig{display:inline-flex;align-items:center;gap:10px}
+.sig svg{width:24px;height:18px;color:var(--muted);opacity:.7}
+.sig svg .kc{stroke:var(--bg)}
+.logo .lt{display:grid;gap:3px;line-height:1.1}
+.logo .lt b{font-size:15px;font-weight:800;letter-spacing:.14em;color:var(--fg)}
+.logo .lt small{font-size:10.5px;font-weight:500;letter-spacing:.16em;color:var(--muted)}
 .nav-links{display:flex;align-items:center;gap:32px;font-size:15px}
 .nav-links a{text-decoration:none;color:var(--muted)}
 .nav-links a:hover{color:var(--fg)}
@@ -303,7 +328,9 @@ nav .sheet{display:none}
 .hero .eyebrow{justify-content:center}
 .hero .sub{margin-inline:auto}
 .hashtags,.icons,.hero .ctas{justify-content:center}
-.hero .ctas .btn{border-radius:999px}
+.hero .ctas .btn{border-radius:999px;padding:7px 18px;font-size:14px;font-weight:600;gap:8px}
+.hero .ctas{gap:8px}
+.hero .ctas .arrow{width:10px;height:10px}
 .school{margin-top:14px;color:var(--fg);font-weight:500;font-size:15px}
 .hashtags{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .hashtags li{font-size:14px;font-weight:700;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px}
@@ -395,6 +422,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 }
 @media (max-width:640px){
   body{font-size:15px}
+  .foot-bot{padding-bottom:96px}
   .br-m{display:inline}
   .fab{opacity:0;pointer-events:none;transform:translateY(12px)}
   .fab.show{opacity:1;pointer-events:auto;transform:none}
@@ -430,7 +458,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
   .hero h1 .hl{display:block}
   .hero .sub{font-size:16px;max-width:22em;margin-inline:auto}
   .hero .ctas{justify-content:center;margin-top:26px;flex-wrap:nowrap}
-  .hero .ctas .btn{flex:0 1 auto;border-radius:999px;padding:15px 24px;gap:12px}
+  .hero .ctas .btn{flex:0 1 auto;border-radius:999px;padding:7px 16px;gap:8px;font-size:13.5px}
   .fab{width:56px;height:56px}
   .tiles{grid-template-columns:minmax(0,1fr)}
   .code{font-size:11.5px;line-height:1.85}
@@ -452,11 +480,18 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="cats" viewBox="0 0 70 52">
+    <path fill="currentColor" d="M9.5 14 L10.5 1.5 L19.5 7.6 Q23 6.8 26.5 7.6 L35.5 1.5 L36.5 14 Q38.5 18.5 37 23 Q35.6 26.6 32.2 28.4 Q40.5 33.5 41.5 43 Q42 49 39 51.5 L7 51.5 Q4 49 4.5 43 Q5.5 33.5 13.8 28.4 Q10.4 26.6 9 23 Q7.5 18.5 9.5 14 Z"/>
+    <g fill="currentColor" style="stroke:var(--bg)" stroke-width="2.6" stroke-linejoin="round">
+      <path d="M38 36.5 Q44 33.5 51 34.5 Q62 36 65.5 43.5 Q67.5 48.5 64.5 51.5 L36 51.5 Q34 47 35 42.5 Q35.8 39 38 36.5 Z"/>
+      <path transform="rotate(-24 47 30)" d="M38.8 25.5 L39.8 16.5 L45.6 21 Q47.6 20.4 49.6 21 L55.4 16.5 L56.4 25.5 Q57.8 28.5 56.6 31.5 Q54.6 35.6 47.6 35.6 Q40.6 35.6 38.6 31.5 Q37.4 28.5 38.8 25.5 Z"/>
+    </g>
+  </symbol>
   <symbol id="ar" viewBox="0 0 12 12"><path d="M2 10 10 2M4 2h6v6" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
 </svg>
 
 <nav><div class="wrap">
-  <a class="logo" href="#home">zohijin.dev</a>
+  <a class="logo" href="#home" aria-label="조이진 포트폴리오 홈"><svg class="cats" viewBox="0 0 70 52" aria-hidden="true"><path fill="currentColor" d="M9.5 14 L10.5 1.5 L19.5 7.6 Q23 6.8 26.5 7.6 L35.5 1.5 L36.5 14 Q38.5 18.5 37 23 Q35.6 26.6 32.2 28.4 Q40.5 33.5 41.5 43 Q42 49 39 51.5 L7 51.5 Q4 49 4.5 43 Q5.5 33.5 13.8 28.4 Q10.4 26.6 9 23 Q7.5 18.5 9.5 14 Z"/><g fill="currentColor" class="kc" stroke-width="2.6" stroke-linejoin="round"><path d="M38 36.5 Q44 33.5 51 34.5 Q62 36 65.5 43.5 Q67.5 48.5 64.5 51.5 L36 51.5 Q34 47 35 42.5 Q35.8 39 38 36.5 Z"/><g class="kh"><path transform="rotate(-24 47 30)" d="M38.8 25.5 L39.8 16.5 L45.6 21 Q47.6 20.4 49.6 21 L55.4 16.5 L56.4 25.5 Q57.8 28.5 56.6 31.5 Q54.6 35.6 47.6 35.6 Q40.6 35.6 38.6 31.5 Q37.4 28.5 38.8 25.5 Z"/></g></g></svg><span class="lt"><b>ZOHIJIN</b></span></a>
   <div class="nav-links" id="navlinks"></div>
   <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sheet" aria-label="메뉴 열기"><svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
 </div>
@@ -467,7 +502,6 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 <main id="v-home" class="wrap view">
   <header class="hero">
     <div>
-      <div class="avatar" aria-hidden="true">IJ</div>
       <p class="eyebrow">Service Developer &amp; Product Planner</p>
       <h1><span class="hl">안녕하세요,</span> <em>조이진</em>입니다.</h1>
       <p class="sub">공공데이터와 AI로 실제 문제를 풀고,<br class="br-m"> 기획부터 구현과 배포까지 직접 합니다.</p>
@@ -623,7 +657,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 <div class="scrim" id="scrim" hidden></div>
 <footer class="wrap">
   <div class="foot-top">
-    <a class="logo" href="#home">zohijin.dev</a>
+    <a class="logo" href="#home" aria-label="조이진 포트폴리오 홈"><svg class="cats" viewBox="0 0 70 52" aria-hidden="true"><path fill="currentColor" d="M9.5 14 L10.5 1.5 L19.5 7.6 Q23 6.8 26.5 7.6 L35.5 1.5 L36.5 14 Q38.5 18.5 37 23 Q35.6 26.6 32.2 28.4 Q40.5 33.5 41.5 43 Q42 49 39 51.5 L7 51.5 Q4 49 4.5 43 Q5.5 33.5 13.8 28.4 Q10.4 26.6 9 23 Q7.5 18.5 9.5 14 Z"/><g fill="currentColor" class="kc" stroke-width="2.6" stroke-linejoin="round"><path d="M38 36.5 Q44 33.5 51 34.5 Q62 36 65.5 43.5 Q67.5 48.5 64.5 51.5 L36 51.5 Q34 47 35 42.5 Q35.8 39 38 36.5 Z"/><g class="kh"><path transform="rotate(-24 47 30)" d="M38.8 25.5 L39.8 16.5 L45.6 21 Q47.6 20.4 49.6 21 L55.4 16.5 L56.4 25.5 Q57.8 28.5 56.6 31.5 Q54.6 35.6 47.6 35.6 Q40.6 35.6 38.6 31.5 Q37.4 28.5 38.8 25.5 Z"/></g></g></svg><span class="lt"><b>ZOHIJIN</b></span></a>
     <div class="foot-links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -634,9 +668,9 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
       <a href="mailto:se1106@jbnu.ac.kr">Email ↗</a>
       <a href="files/cv-ko.pdf" target="_blank" rel="noopener">CV ↗</a>
     </div>
-    <a class="top-link" href="#" id="toTop">맨 위로 <span aria-hidden="true">↑</span></a>
+    <button type="button" class="top-link" id="toTop"><svg viewBox="-9 -9 18 22" fill="currentColor" aria-hidden="true"><path d="M0 3.2c-3.6 0-7 3.2-7 6.4 0 2.6 2.4 3.6 4 3.6 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 4-1 4-3.6 0-3.2-3.4-6.4-7-6.4z"/><ellipse cx="-6.2" cy="-1.2" rx="2.1" ry="2.8" transform="rotate(-20 -6.2 -1.2)"/><ellipse cx="-2.3" cy="-5" rx="2.2" ry="3"/><ellipse cx="2.3" cy="-5" rx="2.2" ry="3"/><ellipse cx="6.2" cy="-1.2" rx="2.1" ry="2.8" transform="rotate(20 6.2 -1.2)"/></svg>맨 위로</button>
   </div>
-  <div class="foot-bot"><span>© 2026 조이진</span><span>전북대학교 컴퓨터인공지능학부</span></div>
+  <div class="foot-bot"><span class="sig"><svg viewBox="0 0 70 52" aria-hidden="true"><path fill="currentColor" d="M9.5 14 L10.5 1.5 L19.5 7.6 Q23 6.8 26.5 7.6 L35.5 1.5 L36.5 14 Q38.5 18.5 37 23 Q35.6 26.6 32.2 28.4 Q40.5 33.5 41.5 43 Q42 49 39 51.5 L7 51.5 Q4 49 4.5 43 Q5.5 33.5 13.8 28.4 Q10.4 26.6 9 23 Q7.5 18.5 9.5 14 Z"/><g fill="currentColor" class="kc" stroke-width="2.6" stroke-linejoin="round"><path d="M38 36.5 Q44 33.5 51 34.5 Q62 36 65.5 43.5 Q67.5 48.5 64.5 51.5 L36 51.5 Q34 47 35 42.5 Q35.8 39 38 36.5 Z"/><path transform="rotate(-24 47 30)" d="M38.8 25.5 L39.8 16.5 L45.6 21 Q47.6 20.4 49.6 21 L55.4 16.5 L56.4 25.5 Q57.8 28.5 56.6 31.5 Q54.6 35.6 47.6 35.6 Q40.6 35.6 38.6 31.5 Q37.4 28.5 38.8 25.5 Z"/></g></svg>© 2026 조이진</span><span>전북대학교 컴퓨터인공지능학부</span></div>
 </footer>
 
 <script>
@@ -926,7 +960,22 @@ function route(){
 window.addEventListener('hashchange',route); route();
 const fabToggle=()=>fab.classList.toggle('show',window.scrollY>360||document.getElementById('v-home').hidden);
 window.addEventListener('scroll',fabToggle,{passive:true}); window.addEventListener('hashchange',fabToggle); fabToggle();
-document.getElementById('toTop').addEventListener('click',e=>{e.preventDefault();window.scrollTo(0,0)});
+const PAWSVG='<svg viewBox="-9 -9 18 22" fill="currentColor" aria-hidden="true"><path d="M0 3.2c-3.6 0-7 3.2-7 6.4 0 2.6 2.4 3.6 4 3.6 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.6 0 4-1 4-3.6 0-3.2-3.4-6.4-7-6.4z"/><ellipse cx="-6.2" cy="-1.2" rx="2.1" ry="2.8" transform="rotate(-20 -6.2 -1.2)"/><ellipse cx="-2.3" cy="-5" rx="2.2" ry="3"/><ellipse cx="2.3" cy="-5" rx="2.2" ry="3"/><ellipse cx="6.2" cy="-1.2" rx="2.1" ry="2.8" transform="rotate(20 6.2 -1.2)"/></svg>';
+document.getElementById('toTop').addEventListener('click',e=>{
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    const r=e.currentTarget.getBoundingClientRect();
+    for(let i=0;i<6;i++){
+      const p=document.createElement('span'); p.className='pawstep'; p.innerHTML=PAWSVG;
+      const x=r.left+6+(i%2?14:0), y=r.top-24-i*34;
+      p.style.left=x+'px'; p.style.top=y+'px'; p.style.transform='rotate('+(i%2?12:-12)+'deg)';
+      p.style.animationDelay=(i*90)+'ms'; document.body.appendChild(p);
+      setTimeout(()=>p.remove(),1400+i*90);
+    }
+    setTimeout(()=>window.scrollTo({top:0,behavior:'smooth'}),420);
+  } else window.scrollTo(0,0);
+});
+document.querySelectorAll('.logo').forEach(l=>l.addEventListener('pointerdown',()=>{l.classList.remove('nod');void l.offsetWidth;l.classList.add('nod');setTimeout(()=>l.classList.remove('nod'),950)}));
 
 /* copy */
 document.querySelectorAll('.copy').forEach(cb=>cb.addEventListener('click',()=>{
