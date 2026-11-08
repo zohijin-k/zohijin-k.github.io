@@ -245,7 +245,7 @@ footer{margin-top:64px}
   .rows .rd,.rows .rt{grid-column:1;text-align:left}
   .rows .arrow{grid-column:2;grid-row:1}
   .d-sec{grid-template-columns:minmax(0,1fr);gap:8px}
-  .d-cover{aspect-ratio:auto;height:420px;padding:32px 24px 0}
+  .d-cover{aspect-ratio:auto;height:auto;max-height:440px;padding:28px 20px 0}
   .d-cover .phones img{width:40%}
   .recog{grid-template-columns:minmax(0,1fr);gap:12px}
 }
@@ -351,6 +351,20 @@ nav .sheet{display:none}
 }
 @media (max-width:640px){
   .tiles{grid-template-columns:minmax(0,1fr)}
+  .code{font-size:11.5px;line-height:1.85}
+  .code pre{padding:14px 14px 16px}
+  .code pre span.l::before{display:none}
+  .panel{padding:20px;gap:16px}
+  .foot-top{flex-direction:column;align-items:flex-start;gap:14px}
+  .foot-links{flex-wrap:wrap;gap:8px 18px}
+  .foot-links a{white-space:nowrap}
+  .page-head{padding-block:48px 36px;margin-bottom:40px}
+  .d-head{padding-block:28px 32px}
+  .d-sec{padding-block:32px}
+  .d-body{margin-top:40px}
+  .hero .ctas .btn{flex:1 1 auto;justify-content:space-between}
+  .filters{margin:-8px 0 32px}
+  .recog ul{gap:8px 20px}
   .c-rows div{grid-template-columns:minmax(0,1fr);gap:6px}
   .mark{width:92%;padding:22px}
 }
@@ -560,7 +574,7 @@ nav .sheet{display:none}
     </div>
     <a class="top-link" href="#" id="toTop">맨 위로 <span aria-hidden="true">↑</span></a>
   </div>
-  <div class="foot-bot"><span>© 2026 조이진. Crafted with care.</span><span>전북대학교 컴퓨터인공지능학부</span></div>
+  <div class="foot-bot"><span>© 2026 조이진</span><span>전북대학교 컴퓨터인공지능학부</span></div>
 </footer>
 
 <script>
@@ -633,13 +647,14 @@ chaeum:{cat:'team',color:'c-mint',kind:'Urban Data · AI',year:'2026',scope:'팀
  award:'오픈소스 SW 해커톤 최우수상 (전북대학교 AI대학장상)',
  desc:'원도심 공실 상가를 진단해 적합 업종을 추천하고 창업자와 매물을 연결하는 플랫폼',
  tags:['Next.js','FastAPI','LangGraph'],impl:'건물 진단 · 업종 적합도 · 유동인구 지도',
- cover:{type:'mark',label:'CHAEUM',logo:'img/chaeum-logo.png'},
+ cover:{type:'browser',url:'채움 · 매물 매칭 결과',img:'img/chaeum.jpg',alt:'채움 매물 상세 화면: 지도와 종합 매칭 점수 73점'},
  lede:'전북 원도심 공실 상가의 업종 적합도를 분석하고, 예비 창업자와 매물을 조건 기반으로 매칭하며, 주변 유동인구를 지도로 제공합니다.',
  meta:[['역할','서비스 전체 UI 설계 · 구현, 멀티 에이전트 설계'],['구분','2026 오픈소스 SW 해커톤'],['수상','최우수상 (전북대학교 AI대학장상)'],['스택','Next.js, TypeScript, Tailwind CSS, FastAPI, LangGraph, SK open API']],
  links:[['GitHub','https://github.com/zohijin-k/CHAEUM']],
  secs:[
   {l:'Problem',h:'문제',p:['건물주, 창업자, 지자체가 서로 다른 정보로 판단해 원도심 공실이 장기화됩니다.']},
   {l:'Solution',h:'해결 방식',list:['건물주 · 예비 창업자 · 팝업 브랜드 · 지자체 담당자별 진입 화면','진단, 업종 순위, 리스크, 인허가, 전략, 유동인구, 리포트를 한 페이지에 구성','상위 3개 매칭 매물을 지도에 표시','매물 반경 1.5km 시간대별 유동인구 지도와 평일 · 주말 비교','지자체용 공실 현황 대시보드']},
+  {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/chaeum.jpg','매물 상세 · 위치 지도, 판정 근거, 예산 · 상권 적합도']]}},
   {l:'Role',h:'담당',p:['서비스 전체 화면의 UI를 설계 · 구현하고, LangGraph 기반 멀티 에이전트 구조를 설계했습니다.']},
   {l:'Engineering',h:'구현',p:['데이터 계층을 인터페이스로 분리해 예시 데이터를 실제 데이터로 교체할 수 있도록 설계했습니다.']}
  ]},
@@ -647,13 +662,14 @@ speakup:{cat:'team',color:'c-lav',kind:'Realtime AI · Coaching',year:'2026',sco
  award:'SW 경진대회 동상',
  desc:'음성과 시선, 자세, 표정을 실시간으로 분석하는 말하기 코칭 서비스',
  tags:['MediaPipe','Whisper','FastAPI'],impl:'실시간 코칭 · LLM 리포트 · 성장 대시보드',
- cover:{type:'mark',label:'SPEAKUP'},
+ cover:{type:'browser',url:'speakup · ai speech coach',img:'img/speakup-home.jpg',alt:'SpeakUp 시작 화면'},
  lede:'발표와 면접을 AI 에이전트와 함께 실시간으로 연습하는 코칭 서비스로, 외부 API 없이 오픈소스 스택만으로 동작합니다.',
  meta:[['역할','웹 프론트엔드'],['구분','2026 SW 경진대회'],['수상','동상'],['스택','MediaPipe, faster-whisper, Ollama, FastAPI, PostgreSQL, TypeScript']],
  links:[['GitHub','https://github.com/zohijin-k/SpeakUp']],
  secs:[
   {l:'Problem',h:'문제',p:['기존 말하기 연습은 녹화 후 직접 영상을 돌려보며 문제를 찾아야 합니다.']},
   {l:'Solution',h:'해결 방식',list:['말 속도, 필러, 침묵, 시선, 자세, 표정 실시간 분석 및 코칭','사용자가 선택한 항목만 화면에 표시','연습 중 질문에 AI 에이전트가 응답','세션 종료 후 LLM 리포트와 주의 구간 제공','첫 세션 대비 변화를 보여주는 성장 대시보드','YAML 파일로 연습 시나리오 추가']},
+  {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/speakup-home.jpg','시작 화면 · 연습 상황 선택'],['img/speakup-session.jpg','실시간 연습 · 코칭 지표와 AI 에이전트 대화'],['img/speakup-report.jpg','세션 리포트 · 점수 변화와 핵심 코칭']]}},
   {l:'Role',h:'담당',p:['세션 생성, 실시간 연습 화면, 리포트, 성장 대시보드 등 웹 프론트엔드를 담당했습니다.']}
  ]},
 tosstalk:{cat:'team',color:'c-butter',kind:'Emotion Care · Interaction',year:'2025',scope:'팀',title:'Toss-Talk',sub:'AI 감정 케어 서비스',
@@ -671,13 +687,14 @@ tosstalk:{cat:'team',color:'c-butter',kind:'Emotion Care · Interaction',year:'2
 haenggan:{cat:'personal',color:'c-butter',kind:'Social Reading',year:'2026',scope:'개인',title:'행간',sub:'함께 읽는 전자책 서비스',
  desc:'읽은 위치까지만 친구의 밑줄과 메모가 공개되는 함께 읽기 서비스',
  tags:['Next.js','Supabase','epub.js'],impl:'진행도 연동 공개 · 참여자별 색상 · 초대 코드',
- cover:{type:'mark',label:'HAENGGAN'},
+ cover:{type:'browser',url:'행간 · space between lines',img:'img/haenggan-start.jpg',alt:'행간 시작 화면: 새로 시작하기와 초대 코드 참여'},
  lede:'친구들과 같은 전자책을 읽으며, 각자 읽은 위치까지만 서로의 밑줄과 메모가 공개되는 서비스입니다.',
  meta:[['역할','1인 기획 · 디자인 · 개발'],['구분','개인 프로젝트'],['스택','Next.js, Supabase, epub.js']],
  links:[['GitHub','https://github.com/zohijin-k/haenggan']],
  secs:[
   {l:'Problem',h:'문제',p:['책에 직접 메모하기를 꺼리는 독자가 많고, 기존 전자책의 공유 기능은 스포일러를 고려하지 않습니다.']},
   {l:'Solution',h:'해결 방식',list:['각자 가장 멀리 읽은 위치 이전의 메모만 표시해 스포일러 방지','참여자마다 고정 색상을 배정해 작성자 구분','6자리 초대 코드와 닉네임으로 참여']},
+  {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/haenggan-start.jpg','시작 화면 · 새 행간 만들기와 초대 코드로 참여, 하이라이트 색 선택']]}},
   {l:'Next',h:'향후 계획',list:['데이터 접근 정책과 인증 강화','메모 표시 인터랙션 개선']}
  ]},
 vine:{cat:'personal',color:'c-mint',kind:'Learning Agent',year:'2026',scope:'개인',title:'VINE',sub:'학습 흐름 복귀 에이전트',
@@ -694,19 +711,20 @@ vine:{cat:'personal',color:'c-mint',kind:'Learning Agent',year:'2026',scope:'개
 prism:{cat:'personal',color:'c-lav',kind:'Research Tool',year:'2026',scope:'개인',title:'PRISM',sub:'논문 재현 지원 도구',
  desc:'논문 PDF와 코드 저장소를 함께 분석해 재현 계획과 대응표를 만드는 도구',
  tags:['React','FastAPI','PDF 파싱'],impl:'구성요소 추출 · 논문 · 코드 비교 · 누락 정보 탐지',
- cover:{type:'mark',label:'PRISM'},
+ cover:{type:'browser',url:'prism · analyze a research paper',img:'img/prism-upload.jpg',alt:'PRISM 논문 업로드 화면'},
  lede:'논문 PDF와 GitHub 저장소를 함께 분석해, 논문 재현에 필요한 정보를 여섯 항목으로 정리합니다.',
  meta:[['역할','1인 기획 · 개발'],['구분','개인 프로젝트'],['스택','React 18, TypeScript, Vite, Tailwind CSS, FastAPI']],
  links:[['GitHub','https://github.com/zohijin-k/PRISM']],
  secs:[
   {l:'Problem',h:'문제',p:['재현에 필요한 데이터셋, 손실 함수, 하이퍼파라미터가 논문과 코드에 흩어져 있고, 논문에 없는 설정도 많습니다.']},
   {l:'Output',h:'분석 항목',list:['논문 요약','단계별 구현 계획','연구 구성요소 (데이터셋, 모델, 손실, 옵티마이저, 지표)','논문 · 코드 비교표','코드 블록과 논문 섹션 매핑','누락 정보']},
+  {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/prism-upload.jpg','논문 업로드 · PDF와 선택적 코드 저장소 입력'],['img/prism-structure.jpg','요약 · 논문 섹션 구조 탐지'],['img/prism-summary.jpg','요약 · 핵심 문제, 한계, 제안 방법, 실험 결과'],['img/prism-plan.jpg','구현 계획 · 단계별 재현 로드맵']]}},
   {l:'Engineering',h:'구현',p:['PDF 파싱, 구성요소 추출, 비교 · 매핑 엔진을 모듈로 분리한 규칙 기반 구조로 구현했습니다.']}
  ]},
 spark:{cat:'personal',color:'c-peach',kind:'Taxonomy Tool',year:'2026',scope:'개인',title:'SPARK',sub:'새우류 종 동정 보조 도구',
  desc:'표본 형질을 입력하면 후보 종을 근거와 함께 순위로 제시하는 종 동정 도구',
  tags:['React 19','TypeScript','Zustand'],impl:'형질 매칭 엔진 · 국내 기록종 우선 · 신뢰도 상한',
- cover:{type:'mark',label:'SPARK'},
+ cover:{type:'browser',url:'spark · 표본 정보 입력',img:'img/spark-input.jpg',alt:'SPARK 표본 정보 입력 화면'},
  lede:'새우 표본의 형질을 입력하면 국내 기록종을 우선 대조하고, 후보 종을 점수와 근거와 함께 제시합니다.',
  meta:[['역할','1인 기획 · 개발'],['구분','개인 프로젝트'],['스택','React 19, TypeScript, Vite, Zustand']],
  links:[['GitHub','https://github.com/zohijin-k/SPARK']],
@@ -714,6 +732,7 @@ spark:{cat:'personal',color:'c-peach',kind:'Taxonomy Tool',year:'2026',scope:'�
   {l:'Problem',h:'문제',p:['종 동정은 확인할 형질이 많고 기준이 자료마다 달라 시간이 오래 걸리며, 관찰자에 따라 결과가 달라집니다.']},
   {l:'Solution',h:'해결 방식',formula:'Score = 형질 유사도 (가중 75%)\n      + 분포 근접도\n      + 국내 기록 여부',
    list:['국내 기록종을 우선 대조하고, 일치하는 종이 없으면 해외 후보로 확장','상위 5개 후보별 일치 · 차이 형질과 출처 표시','형질 없이 분포만으로 산정한 점수는 60%로 제한, 상위 후보 간 격차가 작으면 근거 부족 표시']},
+  {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/spark-input.jpg','표본 정보 입력 · 치식, 갑각 융기선, thelycum 등 형질 입력'],['img/spark-compare.jpg','후보 비교 · 상위 5개 후보 종의 형질별 대조표']]}},
   {l:'Engineering',h:'구현',p:['매칭 엔진이 형질 유형으로만 분기하도록 설계해, 다른 분류군도 데이터 추가만으로 지원할 수 있습니다.']}
  ]}
 };
