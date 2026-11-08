@@ -561,7 +561,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
   </header>
   <div class="filters" id="filters" role="group" aria-label="프로젝트 분류">
     <button type="button" data-f="all" aria-pressed="true">All <small></small></button>
-    <button type="button" data-f="personal" aria-pressed="false">Solo <small></small></button>
+    <button type="button" data-f="personal" aria-pressed="false">Personal <small></small></button>
     <button type="button" data-f="team" aria-pressed="false">Team <small></small></button>
     <button type="button" data-f="awards" aria-pressed="false">Awards <small></small></button>
   </div>
@@ -570,7 +570,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 <main id="v-personal" class="wrap view" hidden>
   <header class="page-head">
     <span class="count" id="c-personal"></span>
-    <h1>Solo</h1>
+    <h1>Personal</h1>
   </header>
   <div class="grid" id="list-personal"></div>
 </main>
@@ -627,7 +627,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
     <div class="foot-links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#personal">Solo</a>
+      <a href="#personal">Personal</a>
       <a href="#team">Team</a>
       <a href="#awards">Awards</a>
       <a href="https://github.com/zohijin-k" target="_blank" rel="noopener">GitHub ↗</a>
@@ -642,7 +642,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 <script>
 const AR='<svg class="arrow" aria-hidden="true"><use href="#ar"/></svg>';
 const P={
-eaai:{cat:'personal',color:'c-lav',kind:'Multi-Agent · Public Data',year:'2026',scope:'Solo',title:'EAAI',sub:'Export Agent AI',
+eaai:{cat:'personal',color:'c-lav',kind:'Multi-Agent · Public Data',year:'2026',scope:'Personal',title:'EAAI',sub:'Export Agent AI',
  award:'산업통상부 공공데이터 활용 공모전 우수상 (한국무역보험공사 사장상)',
  desc:'중소기업의 수출 대상국 선정과 진출 전략 수립을 지원하는 멀티 에이전트 플랫폼',
  tags:['React','FastAPI','K-SURE API'],impl:'멀티 에이전트 · 위험지수 연동 · PDF 보고서',
@@ -691,7 +691,7 @@ jon:{cat:'team',color:'c-mint',kind:'Public Data · Career',year:'2026',scope:'T
    stats:[['36건','지원 가능'],['115건','조건 1개 충족 시 추가'],['11개','자동 검증 항목']]},
   {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/jon.jpg','메인'],['img/jon-blockers.jpg','차단 요인 분석'],['img/jon-position.jpg','나의 위치'],['img/jon-strengths.jpg','보유 역량']]}}
  ]},
-gsb:{cat:'personal',color:'c-peach',kind:'Fintech · Rule + LLM',year:'2026',scope:'Solo',title:'GSBP',sub:'Good Standing Bridge',
+gsb:{cat:'personal',color:'c-peach',kind:'Fintech · Rule + LLM',year:'2026',scope:'Personal',title:'GSBP',sub:'Good Standing Bridge',
  desc:'국내 체류 외국인 대상 명의대여 사기 메시지를 판별하고 근거를 설명하는 서비스',
  tags:['Next.js','TypeScript','Claude API'],impl:'규칙 엔진 판정 · AI 근거 생성 · 이중언어',
  cover:{type:'phones',imgs:[['img/gsb-3.jpg','GSBP 메시지 판별 화면'],['img/gsb-1.jpg','GSBP 진단 화면']]},
@@ -746,7 +746,7 @@ tosstalk:{cat:'team',color:'c-butter',kind:'Emotion Care · Interaction',year:'2
   {l:'Features',h:'주요 기능',list:['AI 챗봇 대화','이용 전후 감정 상태 비교 시각화','감정을 적은 종이를 구겨 버리는 드래그 인터랙션','정원 가꾸기, 계란 깨기 미니게임']},
   {l:'Role',h:'담당',p:['서비스 기획부터 UI/UX 설계, 프론트엔드 개발, AI 챗봇 연동, 인터랙션 구현, 최종 발표까지 총괄했습니다.']}
  ]},
-haenggan:{cat:'personal',color:'c-butter',kind:'Social Reading',year:'2026',scope:'Solo',title:'행간',sub:'함께 읽는 전자책 서비스',
+haenggan:{cat:'personal',color:'c-butter',kind:'Social Reading',year:'2026',scope:'Personal',title:'행간',sub:'함께 읽는 전자책 서비스',
  desc:'읽은 위치까지만 친구의 밑줄과 메모가 공개되는 함께 읽기 서비스',
  tags:['Next.js','Supabase','epub.js'],impl:'진행도 연동 공개 · 참여자별 색상 · 초대 코드',
  cover:{type:'browser',url:'행간 · space between lines',img:'img/haenggan-start.jpg',alt:'행간 시작 화면: 새로 시작하기와 초대 코드 참여'},
@@ -759,7 +759,7 @@ haenggan:{cat:'personal',color:'c-butter',kind:'Social Reading',year:'2026',scop
   {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/haenggan-start.jpg','시작 화면 · 새 행간 만들기와 초대 코드로 참여, 하이라이트 색 선택']]}},
   {l:'Next',h:'향후 계획',list:['데이터 접근 정책과 인증 강화','메모 표시 인터랙션 개선']}
  ]},
-vine:{cat:'personal',color:'c-mint',kind:'Learning Agent',year:'2026',scope:'Solo',title:'VINE',sub:'학습 흐름 복귀 에이전트',
+vine:{cat:'personal',color:'c-mint',kind:'Learning Agent',year:'2026',scope:'Personal',title:'VINE',sub:'학습 흐름 복귀 에이전트',
  desc:'흩어진 학습 공지를 할 일로 정리하고 중단된 작업으로 복귀를 돕는 AI 에이전트',
  tags:['Next.js','TypeScript','Claude API'],impl:'멀티모달 분석 · 초안 생성 · 복귀 알림',
  cover:{type:'mark',label:'VINE'},
@@ -770,7 +770,7 @@ vine:{cat:'personal',color:'c-mint',kind:'Learning Agent',year:'2026',scope:'Sol
   {l:'Problem',h:'문제',p:['학습 정보가 여러 채널에 분산되어 정리에 시간이 들고, 작업이 한 번 중단되면 다시 시작하기 어렵습니다.']},
   {l:'Solution',h:'해결 방식',list:['PDF · 이미지 · 텍스트에서 과목, 과제, 시험, 마감을 추출해 과목별 할 일 생성','현재 진행할 작업 하나를 우선 제시','선택한 할 일의 자료 요약과 초안 구조 자동 생성','이탈 감지 후 이전 작업 상태 복원']}
  ]},
-prism:{cat:'personal',color:'c-lav',kind:'Research Tool',year:'2026',scope:'Solo',title:'PRISM',sub:'논문 재현 지원 도구',
+prism:{cat:'personal',color:'c-lav',kind:'Research Tool',year:'2026',scope:'Personal',title:'PRISM',sub:'논문 재현 지원 도구',
  desc:'논문 PDF와 코드 저장소를 함께 분석해 재현 계획과 대응표를 만드는 도구',
  tags:['React','FastAPI','PDF 파싱'],impl:'구성요소 추출 · 논문 · 코드 비교 · 누락 정보 탐지',
  cover:{type:'browser',url:'prism · analyze a research paper',img:'img/prism-upload.jpg',alt:'PRISM 논문 업로드 화면'},
@@ -783,7 +783,7 @@ prism:{cat:'personal',color:'c-lav',kind:'Research Tool',year:'2026',scope:'Solo
   {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/prism-upload.jpg','논문 업로드 · PDF와 선택적 코드 저장소 입력'],['img/prism-structure.jpg','요약 · 논문 섹션 구조 탐지'],['img/prism-summary.jpg','요약 · 핵심 문제, 한계, 제안 방법, 실험 결과'],['img/prism-plan.jpg','구현 계획 · 단계별 재현 로드맵']]}},
   {l:'Engineering',h:'구현',p:['PDF 파싱, 구성요소 추출, 비교 · 매핑 엔진을 모듈로 분리한 규칙 기반 구조로 구현했습니다.']}
  ]},
-spark:{cat:'personal',color:'c-peach',kind:'Taxonomy Tool',year:'2026',scope:'Solo',title:'SPARK',sub:'새우류 종 동정 보조 도구',
+spark:{cat:'personal',color:'c-peach',kind:'Taxonomy Tool',year:'2026',scope:'Personal',title:'SPARK',sub:'새우류 종 동정 보조 도구',
  desc:'표본 형질을 입력하면 후보 종을 근거와 함께 순위로 제시하는 종 동정 도구',
  tags:['React 19','TypeScript','Zustand'],impl:'형질 매칭 엔진 · 국내 기록종 우선 · 신뢰도 상한',
  cover:{type:'browser',url:'spark · 표본 정보 입력',img:'img/spark-input.jpg',alt:'SPARK 표본 정보 입력 화면'},
@@ -800,7 +800,7 @@ spark:{cat:'personal',color:'c-peach',kind:'Taxonomy Tool',year:'2026',scope:'So
 };
 const FEATURED=['eaai','tripick','jon','gsb'];
 const LISTS={personal:['eaai','gsb','haenggan','vine','prism','spark'],team:['tripick','jon','chaeum','speakup','tosstalk'],awards:['eaai','chaeum','speakup','jon','tosstalk']};
-const NAMES={personal:'Solo',team:'Team',awards:'Awards'};
+const NAMES={personal:'Personal',team:'Team',awards:'Awards'};
 const ALL=['eaai','tripick','jon','gsb','chaeum','speakup','tosstalk','haenggan','vine','prism','spark'];
 const VIEWS=['home','about','projects','personal','team','awards','contact'];
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -843,7 +843,7 @@ document.getElementById('navlinks').innerHTML=`
   <a href="#home" data-v="home">Home</a>
   <a href="#about" data-v="about">About</a>
   <a href="#projects" data-v="projects">Projects</a>
-  <div class="dd"><button type="button" aria-expanded="false" data-v="personal">Solo</button><div class="menu">${menuLinks('personal')}</div></div>
+  <div class="dd"><button type="button" aria-expanded="false" data-v="personal">Personal</button><div class="menu">${menuLinks('personal')}</div></div>
   <div class="dd"><button type="button" aria-expanded="false" data-v="team">Team</button><div class="menu">${menuLinks('team')}</div></div>
   <div class="dd"><button type="button" aria-expanded="false" data-v="awards">Awards</button><div class="menu">${menuLinks('awards')}</div></div>
   <div class="dd"><button type="button" aria-expanded="false" data-v="contact">Contact</button><div class="menu"><a class="all" href="#contact">Contact page</a><a href="https://github.com/zohijin-k" target="_blank" rel="noopener">GitHub <small>↗</small></a><a href="mailto:se1106@jbnu.ac.kr">Email <small>↗</small></a><a href="files/cv-ko.pdf" target="_blank" rel="noopener">CV PDF <small>↗</small></a></div></div>`;
@@ -851,7 +851,7 @@ document.getElementById('sheet').innerHTML=`
   <a class="item" href="#home" data-v="home">Home</a>
   <a class="item" href="#about" data-v="about">About</a>
   <a class="item" href="#projects" data-v="projects">Projects</a>
-  <a class="item" href="#personal" data-v="personal">Solo</a>
+  <a class="item" href="#personal" data-v="personal">Personal</a>
   <a class="item" href="#team" data-v="team">Team</a>
   <a class="item" href="#awards" data-v="awards">Awards</a>
   <a class="item" href="#contact" data-v="contact">Contact</a>
