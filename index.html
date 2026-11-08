@@ -44,7 +44,7 @@
 html{scroll-behavior:smooth}
 [id]{scroll-margin-top:96px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{word-break:keep-all;overflow-wrap:break-word;background-color:var(--bg);background-image:var(--paw);background-size:460px 460px;color:var(--fg);font-family:var(--sans);font-variant-numeric:tabular-nums;font-size:16px;line-height:1.7;letter-spacing:-.01em;
+body{word-break:keep-all;overflow-wrap:break-word;background-color:var(--bg);background-image:var(--paw);background-size:460px 460px;background-position:-20px 70px;color:var(--fg);font-family:var(--sans);font-variant-numeric:tabular-nums;font-size:16px;line-height:1.7;letter-spacing:-.01em;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .wrap{max-width:1280px;margin:0 auto}
 a{color:inherit}
@@ -342,7 +342,8 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 
 /* floating contact */
 .fab{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));width:60px;height:60px;border-radius:50%;border:0;background:var(--blue);color:var(--on-blue);display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 28px rgba(0,84,166,.28);z-index:30}
-.fab svg{width:26px;height:26px}
+.fab svg{width:30px;height:28px;margin-top:2px}
+@media (prefers-reduced-motion:no-preference){.fab:hover svg{animation:nod .9s ease-in-out}}
 .pop{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(92px + env(safe-area-inset-bottom,0px));width:min(360px,calc(100vw - 40px));background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 24px 60px rgba(17,20,19,.16);z-index:31;display:grid;gap:12px}
 .pop h3{font-size:18px;font-weight:700;margin-bottom:6px}
 .pop .pc{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:14px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:16px 18px;text-decoration:none;color:var(--fg);background:var(--bg)}
@@ -373,7 +374,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 .all-link{display:flex;justify-content:center;margin-top:64px}
 [hidden]{display:none!important}
 /* page header for sub pages */
-.page-head{padding-block:72px 56px;display:grid;gap:18px;border-bottom:1px solid var(--line);margin-bottom:64px}
+.page-head{padding-block:40px 32px;display:grid;gap:14px;margin-bottom:24px}
 .page-head h1{font-size:clamp(40px,5.4vw,64px);font-weight:700}
 .page-head p{color:var(--muted);font-size:17px;max-width:44em}
 .page-head .count{font-family:var(--mono);font-size:12.5px;color:var(--blue)}
@@ -468,7 +469,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
   .foot-top{flex-direction:column;align-items:flex-start;gap:14px}
   .foot-links{flex-wrap:wrap;gap:8px 18px}
   .foot-links a{white-space:nowrap}
-  .page-head{padding-block:48px 36px;margin-bottom:40px}
+  .page-head{padding-block:20px 16px;gap:10px;margin-bottom:12px}
   .d-head{padding-block:28px 32px}
   .d-sec{padding-block:32px}
   .d-body{margin-top:40px}
@@ -647,7 +648,7 @@ button.btn{font-family:var(--sans);cursor:pointer;color:var(--fg)}
 <!-- ============ DETAIL ============ -->
 <main id="v-detail" class="wrap view" hidden></main>
 
-<button type="button" class="fab" id="fab" aria-label="연락하기" aria-expanded="false" aria-controls="pop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></button>
+<button type="button" class="fab" id="fab" aria-label="연락하기" aria-expanded="false" aria-controls="pop"><svg viewBox="0 0 24 22" aria-hidden="true"><path fill="currentColor" d="M3.2 9.4 L4.1 1.2 L9.3 5.3 Q12 4.6 14.7 5.3 L19.9 1.2 L20.8 9.4 Q22.2 12.3 21 15.2 Q19 19.7 12 19.7 Q5 19.7 3 15.2 Q1.8 12.3 3.2 9.4 Z"/><ellipse cx="8.4" cy="12" rx="1.25" ry="1.6" fill="var(--blue)"/><ellipse cx="15.6" cy="12" rx="1.25" ry="1.6" fill="var(--blue)"/><path d="M11 14.6 h2 l-1 1.1 z" fill="var(--blue)"/></svg></button>
 <div class="pop" id="pop" role="dialog" aria-label="Contact" hidden>
   <h3>Contact</h3>
   <div class="pc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg><div><small>Email</small><b class="mail">se1106@jbnu.ac.kr</b></div><button type="button" class="copy" data-copy="se1106@jbnu.ac.kr">Copy</button></div>
