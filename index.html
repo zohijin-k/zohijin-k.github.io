@@ -612,7 +612,13 @@ header.page-head span.count{font-size:12px;font-weight:500;letter-spacing:.08em;
 @keyframes hopy{45%{transform:matrix(-.72,0,0,.72,64,7.6)}}
 
 .sk2 span{display:inline-flex;align-items:center;gap:8px}
-.sk2 .se{font-style:normal;font-size:16px;letter-spacing:0;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.sk2 .se{width:16px;height:16px;flex:none;color:var(--blue)}
+
+.sub-h.sk-h{align-items:center;gap:10px}
+.sub-h .skh-ic{width:22px;height:22px;color:var(--blue);flex:none}
+
+#v-contact .c-rows dt{display:inline-flex;align-items:center;gap:10px}
+#v-contact .c-rows .ci{width:17px;height:17px;flex:none;color:var(--blue)}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -703,12 +709,12 @@ header.page-head span.count{font-size:12px;font-weight:500;letter-spacing:.08em;
     </dl>
   </section>
 
-  <h2 class="sub-h">Skills</h2>
+  <h2 class="sub-h sk-h"><svg class="skh-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 4.8-9 4.8-9-4.8z"/><path d="m3 12 9 4.8 9-4.8M3 16.4l9 4.8 9-4.8"/></svg>Skills</h2>
   <div class="sk2" id="skills-about">
-    <div><span><i class="se" aria-hidden="true">🖥️</i>Frontend</span><ul><li>Next.js</li><li>React</li><li>React Native</li><li>TypeScript</li><li>Tailwind</li></ul></div>
-    <div><span><i class="se" aria-hidden="true">🗄️</i>Backend</span><ul><li>FastAPI</li><li>Supabase</li><li>PostgreSQL</li><li>Vercel</li><li>Railway</li></ul></div>
-    <div><span><i class="se" aria-hidden="true">🤖</i>AI</span><ul><li>Multi-Agent</li><li>LangGraph</li><li>OpenAI API</li><li>Claude API</li><li>MediaPipe</li></ul></div>
-    <div><span><i class="se" aria-hidden="true">🧩</i>Product</span><ul><li>문제 정의</li><li>화면 설계</li><li>기능명세서</li><li>발표</li></ul></div>
+    <div><span><svg class="se" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.6"/><path d="M8.5 20h7M12 16v4"/></svg>Frontend</span><ul><li>Next.js</li><li>React</li><li>React Native</li><li>TypeScript</li><li>Tailwind</li></ul></div>
+    <div><span><svg class="se" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-13M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/></svg>Backend</span><ul><li>FastAPI</li><li>Supabase</li><li>PostgreSQL</li><li>Vercel</li><li>Railway</li></ul></div>
+    <div><span><svg class="se" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4.5M9 13h.01M15 13h.01M9.5 16.2h5"/><circle cx="12" cy="3.6" r="1"/></svg>AI</span><ul><li>Multi-Agent</li><li>LangGraph</li><li>OpenAI API</li><li>Claude API</li><li>MediaPipe</li></ul></div>
+    <div><span><svg class="se" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5a2 2 0 0 1 4 0V6h4a1 1 0 0 1 1 1v4h-1.5a2 2 0 0 0 0 4H18v4a1 1 0 0 1-1 1h-4v-1.5a2 2 0 0 0-4 0V20H5a1 1 0 0 1-1-1v-4h1.5a2 2 0 0 0 0-4H4V7a1 1 0 0 1 1-1h4z"/></svg>Product</span><ul><li>문제 정의</li><li>화면 설계</li><li>기능명세서</li><li>발표</li></ul></div>
   </div>
 </main>
 
@@ -767,10 +773,10 @@ header.page-head span.count{font-size:12px;font-weight:500;letter-spacing:.08em;
     <span class="label">Get in touch</span>
   </header>
   <dl class="c-rows">
-    <div><dt>Email</dt><dd class="mail">se1106@jbnu.ac.kr</dd><span class="c-act"><button type="button" class="copy" data-copy="se1106@jbnu.ac.kr">Copy</button><a href="mailto:se1106@jbnu.ac.kr">Send ↗</a></span></div>
-    <div><dt>GitHub</dt><dd>github.com/zohijin-k</dd><a href="https://github.com/zohijin-k" target="_blank" rel="noopener">Open ↗</a></div>
-    <div><dt>CV</dt><dd>국문 · English CV</dd><span><a href="files/cv-ko.pdf" target="_blank" rel="noopener">국문 ↗</a>&nbsp;&nbsp;<a href="files/cv-en.pdf" target="_blank" rel="noopener">English ↗</a></span></div>
-    <div><dt>Location</dt><dd>전주 · 전북대학교 컴퓨터인공지능학부</dd><span></span></div>
+    <div><dt><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>Email</dt><dd class="mail">se1106@jbnu.ac.kr</dd><span class="c-act"><button type="button" class="copy" data-copy="se1106@jbnu.ac.kr">Copy</button><a href="mailto:se1106@jbnu.ac.kr">Send ↗</a></span></div>
+    <div><dt><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</dt><dd>github.com/zohijin-k</dd><a href="https://github.com/zohijin-k" target="_blank" rel="noopener">Open ↗</a></div>
+    <div><dt><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>CV</dt><dd>국문 · English CV</dd><span><a href="files/cv-ko.pdf" target="_blank" rel="noopener">국문 ↗</a>&nbsp;&nbsp;<a href="files/cv-en.pdf" target="_blank" rel="noopener">English ↗</a></span></div>
+    <div><dt><svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>Location</dt><dd>전주 · 전북대학교 컴퓨터인공지능학부</dd><span></span></div>
   </dl>
 </main>
 
