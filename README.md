@@ -5,3 +5,5 @@
 - `index.html` 페이지 전체 (홈, 소개, 프로젝트, 연락처, 상세 페이지)
 - `img/` 프로젝트 스크린샷
 - `files/` CV PDF (국문, 영문)
+
+<sub>Cat icon: [Twemoji](https://github.com/jdecked/twemoji) (CC-BY 4.0)</sub>
