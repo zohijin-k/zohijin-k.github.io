@@ -157,7 +157,8 @@ nav:has(.sheet.open) .cats .kc{stroke:var(--tint)}
 
 /* project cards */
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:72px 32px}
-.card{display:grid;gap:0;text-decoration:none}
+.card{display:flex;flex-direction:column;text-decoration:none}
+.card>.tags{margin-bottom:auto}
 .cover{aspect-ratio:16/11;border-radius:20px;padding:40px 40px 0;overflow:hidden;display:flex;justify-content:center;align-items:flex-start;max-width:100%}
 .c-lav{background:var(--lav)}.c-sage{background:var(--sage)}.c-butter{background:var(--butter)}.c-mint{background:var(--mint)}.c-peach{background:var(--peach)}
 .browser{width:100%;background:var(--surface);border-radius:10px 10px 0 0;box-shadow:0 1px 0 var(--line),0 12px 32px rgba(30,36,34,.08);overflow:hidden}
@@ -165,6 +166,9 @@ nav:has(.sheet.open) .cats .kc{stroke:var(--tint)}
 .browser .bar i{width:7px;height:7px;border-radius:50%;background:var(--line)}
 .browser .bar span{margin-left:12px}
 .browser img{width:100%}
+.screen{width:100%;background:#0B0D12;border-radius:10px 10px 0 0;padding:8px 8px 0;box-shadow:0 12px 32px rgba(30,36,34,.12);overflow:hidden}
+.screen img{width:100%;border-radius:4px 4px 0 0;display:block}
+.d-cover .screen{max-width:980px}
 .phones{display:flex;gap:18px;justify-content:center;width:100%}
 .phones img{width:36%;border-radius:20px;box-shadow:0 12px 32px rgba(30,36,34,.12)}
 .card:hover .cover .browser,.card:hover .cover .phones{transform:translateY(-6px)}
@@ -285,6 +289,8 @@ footer.wrap{margin-top:120px}
 .stat span{font-size:13px;color:var(--muted)}
 .gallery{display:grid;gap:20px;margin-top:8px}
 .gallery.wide{grid-template-columns:minmax(0,1fr)}
+.gallery.wide2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:640px){.gallery.wide2{grid-template-columns:minmax(0,1fr)}}
 .gallery.phone{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
 .gallery figure{margin:0}
 .gallery img{width:100%;border-radius:12px;border:1px solid var(--line)}
@@ -758,7 +764,8 @@ nav{margin-inline:calc(50% - 50vw);padding-inline:max(16px,env(safe-area-inset-l
 
   <h2 class="sub-h sk-h"><svg class="skh-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 4.8-9 4.8-9-4.8z"/><path d="m3 12 9 4.8 9-4.8M3 16.4l9 4.8 9-4.8"/></svg>Skills</h2>
   <div class="sk2" id="skills-about">
-    <div><span><svg class="se" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.6"/><path d="M8.5 20h7M12 16v4"/></svg>Frontend</span><ul><li>Next.js</li><li>React</li><li>React Native</li><li>TypeScript</li><li>Tailwind</li></ul></div>
+    <div><span><svg class="se" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.6"/><path d="M8.5 20h7M12 16v4"/></svg>Frontend</span><ul><li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind</li></ul></div>
+    <div><span><svg class="se" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M10.5 18.5h3"/></svg>Mobile</span><ul><li>React Native</li><li>Kotlin</li><li>Jetpack Compose</li><li>Android Automotive</li></ul></div>
     <div><span><svg class="se" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-13M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/></svg>Backend</span><ul><li>FastAPI</li><li>Supabase</li><li>PostgreSQL</li><li>Vercel</li><li>Railway</li></ul></div>
     <div><span><svg class="se" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4.5M9 13h.01M15 13h.01M9.5 16.2h5"/><circle cx="12" cy="3.6" r="1"/></svg>AI</span><ul><li>Multi-Agent</li><li>LangGraph</li><li>OpenAI API</li><li>Claude API</li><li>MediaPipe</li></ul></div>
     <div><span><svg class="se" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5a2 2 0 0 1 4 0V6h4a1 1 0 0 1 1 1v4h-1.5a2 2 0 0 0 0 4H18v4a1 1 0 0 1-1 1h-4v-1.5a2 2 0 0 0-4 0V20H5a1 1 0 0 1-1-1v-4h1.5a2 2 0 0 0 0-4H4V7a1 1 0 0 1 1-1h4z"/></svg>Product</span><ul><li>문제 정의</li><li>화면 설계</li><li>기능명세서</li><li>발표</li></ul></div>
@@ -909,6 +916,24 @@ jon:{cat:'team',color:'c-mint',kind:'Public Data · Career',year:'2026',scope:'T
    stats:[['36건','지원 가능'],['115건','조건 1개 충족 시 추가'],['11개','자동 검증 항목']]},
   {l:'Screens',h:'주요 화면',gallery:{type:'wide',items:[['img/jon.jpg','메인'],['img/jon-blockers.jpg','차단 요인 분석'],['img/jon-position.jpg','나의 위치'],['img/jon-strengths.jpg','보유 역량']]}}
  ]},
+syne:{cat:'personal',color:'c-sage',kind:'Automotive · Audio',year:'2026',scope:'Personal',title:'SYNE',sub:'See Your Sound',
+ desc:'운전하는 동안 차량 신호로 실시간 작곡하고, 도착하면 그 길을 앨범으로 남기는 차량용 앱',
+ tags:['Kotlin','Jetpack Compose','AAOS'],impl:'실시간 오디오 합성 · 차량 신호 연동 · 코스 앨범',
+ cover:{type:'screen',img:'img/syne-home.jpg',alt:'SYNE 홈 화면'},
+ lede:'속도·조향·브레이크·방향지시등·내비 정보가 악기 편성과 멜로디가 되고, 같은 길을 다시 달리면 같은 앨범의 다음 Vol.로 쌓입니다.',
+ meta:[['역할','1인 기획 · 디자인 · 개발'],['플랫폼','Pleos Connect (Android Automotive OS)'],['스택','Kotlin, Jetpack Compose, Coroutines/Flow, Pleos Connect SDK, CarPropertyManager, AudioTrack, MediaCodec, Room']],
+ links:[['GitHub','https://github.com/zohijin-k/SYNE']],
+ secs:[
+  {l:'Concept',h:'아이디어',p:['운전 자체를 작곡 입력으로 삼아, 주행마다 다른 곡과 앨범 아트를 만듭니다. 차량은 음악을 만드는 곳, 휴대폰은 완성된 앨범을 다시 듣는 곳으로 역할을 나눴습니다.']},
+  {l:'Engine',h:'실시간 작곡 엔진',p:['오디오 스레드가 1024프레임 블록마다 차량 신호의 최신값을 읽어 분석부터 합성, 기록까지 한 번에 처리합니다. 별도 폴링 없이 CPU 사용량이 일정합니다(오디오 스레드 약 3%/코어).'],
+   formula:'Vehicle Signals → DriveState → SongPlanner\n  → Arranger → Renderer → SoundEngine → TripRecorder',
+   list:['속도 구간에 따라 편성과 멜로디 음색이 바뀌고, 조향각은 A 마이너 펜타토닉으로 양자화한 멜로디와 패닝이 됨','급제동은 테이프 스톱으로 끊고 다음 마디 첫 박에서 다시 진입, 정차하면 드럼과 베이스가 빠짐','내비 남은 시간에 맞춰 도착 시점까지 곡 구조를 배분','드럼을 포함한 모든 소리를 웨이브테이블·polyBLEP 오실레이터와 SVF 필터로 직접 합성']},
+  {l:'Safety',h:'안전 설계',list:['과속하면 곡이 낡은 테이프처럼 먹먹해지고, 편성은 제한속도 기준으로 계산해 더 빨리 달려도 보상하지 않음','주행 중에는 숫자·버튼·애니메이션 없는 정지 그래픽 화면만 표시','사각지대 카메라 팝업 영역을 비우고, 내비 음성 안내 중에는 음악을 자동으로 낮춤']},
+  {l:'Album',h:'코스 앨범 · 앨범 아트',list:['출발·도착 지점을 반경 300m로 클러스터링해 같은 코스의 주행을 한 앨범의 Vol.1, Vol.2…로 묶음','주행 데이터로 무드 가중치를 정하고, 18종 매체 중 하나로 곡마다 커버를 기기 안에서 생성','좌표는 앱 내부 DB에서만 쓰고, 휴대폰 컴패니언 앱에는 좌표를 뺀 .syne 번들로 전달']},
+  {l:'Screens',h:'주요 화면',gallery:{type:'wide2',items:[['img/syne-home.jpg','홈 · 장르와 목적지 선택'],['img/syne-driving.jpg','주행 화면 · 무터치 정지 그래픽'],['img/syne-track.jpg','도착 · 주행 기록과 하이라이트'],['img/syne-library.jpg','보관함 · 코스 앨범']]}},
+  {l:'Testing',h:'검증',p:['음악 반응은 오프라인 렌더 테스트로 수치를 확인합니다(급제동 1초 내 −66dB, 정차 시 저역 −11dB). 편성 규칙, 코스 클러스터링, 번들 형식 등 단위 테스트 55개를 작성했습니다.']},
+  {l:'Status',h:'현재 상태',p:['Pleos Connect 에뮬레이터에서 데모 주행(Replay)으로 동작합니다. AI 앨범 아트 서버와 차량–휴대폰 실시간 동기화는 준비 중입니다.']}
+ ]},
 gsb:{cat:'personal',color:'c-peach',kind:'Fintech · Rule + LLM',year:'2026',scope:'Personal',title:'GSBP',sub:'Good Standing Bridge',
  desc:'국내 체류 외국인 대상 명의대여 사기 메시지를 판별하고 근거를 설명하는 서비스',
  tags:['Next.js','TypeScript','Claude API'],impl:'규칙 엔진 판정 · AI 근거 생성 · 이중언어',
@@ -1018,12 +1043,12 @@ spark:{cat:'personal',color:'c-peach',kind:'Taxonomy Tool',year:'2026',scope:'Pe
 };
 const PC={eaai:['#E2E7EE','#1E2632'],tripick:['#DCEFE4','#1C2E25'],jon:['#E0EAF5','#1D2734'],gsb:['#F3E3E6','#33242A'],
   chaeum:['#F4E6D6','#33291F'],speakup:['#E6E2F3','#28243A'],tosstalk:['#F5ECCB','#332E1C'],haenggan:['#E3E9DA','#262E22'],
-  vine:['#D9ECE8','#1D2E2B'],prism:['#E2E5F5','#222638'],spark:['#F6E0D6','#36261F']};
+  vine:['#D9ECE8','#1D2E2B'],prism:['#E2E5F5','#222638'],spark:['#F6E0D6','#36261F'],syne:['#E1E6EC','#1C2229']};
 const pcs=k=>`--cl:${PC[k][0]};--cd:${PC[k][1]}`;
 const FEATURED=['eaai','tripick','jon','gsb'];
-const LISTS={personal:['eaai','gsb','haenggan','vine','prism','spark'],team:['tripick','jon','chaeum','speakup','tosstalk'],awards:['eaai','chaeum','speakup','jon','tosstalk']};
+const LISTS={personal:['eaai','syne','gsb','haenggan','vine','prism','spark'],team:['tripick','jon','chaeum','speakup','tosstalk'],awards:['eaai','chaeum','speakup','jon','tosstalk']};
 const NAMES={personal:'Personal',team:'Team',awards:'Awards'};
-const ALL=['eaai','tripick','jon','gsb','chaeum','speakup','tosstalk','haenggan','vine','prism','spark'];
+const ALL=['eaai','tripick','jon','syne','gsb','chaeum','speakup','tosstalk','haenggan','vine','prism','spark'];
 const VIEWS=['home','about','projects','personal','team','awards','contact'];
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const pad=n=>String(n).padStart(2,'0');
@@ -1031,6 +1056,7 @@ const pad=n=>String(n).padStart(2,'0');
 function coverHTML(p){
   const c=p.cover;
   if(c.type==='browser') return `<div class="browser"><div class="bar"><i></i><i></i><i></i><span>${esc(c.url)}</span></div><img src="${c.img}" alt="${esc(c.alt)}"></div>`;
+  if(c.type==='screen') return `<div class="screen"><img src="${c.img}" alt="${esc(c.alt)}"></div>`;
   if(c.type==='phones') return `<div class="phones">${c.imgs.map(([s,a])=>`<img src="${s}" alt="${esc(a)}">`).join('')}</div>`;
   return `<div class="mark"><span class="mono"><span>${esc(c.label)}</span><span>${esc(p.year.split(' · ')[0])}</span></span><b>${esc(p.title)}</b><p>${esc(p.sub)}</p>${c.logo?`<img src="${c.logo}" alt="">`:''}</div>`;
 }
