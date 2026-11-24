@@ -981,6 +981,24 @@ tosstalk:{cat:'team',color:'c-butter',kind:'Emotion Care · Interaction',year:'2
   {l:'Features',h:'주요 기능',list:['AI 챗봇 대화','이용 전후 감정 상태 비교 시각화','감정을 적은 종이를 구겨 버리는 드래그 인터랙션','정원 가꾸기, 계란 깨기 미니게임']},
   {l:'Role',h:'담당',p:['서비스 기획부터 UI/UX 설계, 프론트엔드 개발, AI 챗봇 연동, 인터랙션 구현, 최종 발표까지 총괄했습니다.']}
  ]},
+bokji:{cat:'personal',color:'c-mint',kind:'Public Data · Rule + LLM',year:'2026',scope:'Personal',title:'복지대로',sub:'Bokji-Daero · 복지 내비게이션',
+ desc:'사회보장 데이터로 받을 수 있는 복지와 다음 행동을 경로처럼 안내하는 복지 내비게이션',
+ tags:['Next.js','TypeScript','OpenAI API'],impl:'규칙 기반 자격 판정 · SVG 복지지도 · AI 근거 설명',
+ cover:{type:'phones',imgs:[['img/bokji-home.jpg','복지대로 홈 화면'],['img/bokji-map.jpg','복지대로 복지지도 화면']]},
+ lede:'받을 수 있는 복지제도를 나열하는 대신, 지금 확인할 수 있는 복지와 추천 이유, 다음에 할 일을 지도와 내비게이션처럼 보여줍니다.',
+ meta:[['역할','기획 · 디자인 · 개발'],['스택','Next.js 16, React 19, TypeScript, Tailwind CSS 4, SVG, OpenAI API, Vitest']],
+ links:[['GitHub','https://github.com/zohijin-k/Bokji-Daero']],
+ secs:[
+  {l:'Problem',h:'문제',p:['복지제도는 많지만 소득·재산·연령·가구 구성 같은 자격 조건이 복잡하고, 어떤 서류를 준비해 어디에 신청해야 하는지 알기 어렵습니다. 제도를 찾아도 실제 신청 준비까지 이어지지 않는 경우가 많습니다.']},
+  {l:'Solution',h:'해결 방식',p:['탐색은 지도처럼, 신청은 내비게이션처럼, 진행 관리는 여정처럼 구성했습니다.'],
+   list:['사용자 조건으로 제도마다 지금 가능 · 상담 필요 · N개월 후 · 막힌 길 상태를 구분','SVG 복지지도와 하단 목록을 양방향으로 연동하고, 지도 없이 목록만으로도 탐색 가능','제도를 고르면 자격 확인 → 기관 문의 → 신청 안내 순으로 지금 할 일부터 안내','소득·구직급여 조건을 바꾸면 경로를 다시 계산해 새로 생기거나 빠진 경로를 비교']},
+  {l:'Engine',h:'판정 구조',p:['자격 판정은 규칙 엔진이 맡고, 생성형 AI는 판정 근거를 쉬운 말로 풀어 설명하는 역할만 하도록 나눴습니다.'],
+   formula:'Official Welfare Data → Normalization\n  → Rule-based Eligibility → Evidence · Missing Info\n  → AI Explanation → Navigation UI',
+   list:['충족 · 미충족 · 미확인 조건을 구분하고 판정 근거와 공식 출처를 함께 관리','AI는 판정 상태를 바꿀 수 없고, OpenAI Structured Outputs로 응답 형식을 고정','사용자가 동의한 경우에만 필요한 최소 조건을 전송하고, 오류 시 규칙 기반 안내를 유지']},
+  {l:'Data',h:'공공데이터',p:['한국사회보장정보원 복지서비스정보 CSV를 내려받아 461개 제도로 정규화하고, 제도명 · 소관기관 · 공식 상세 링크를 검색할 수 있게 했습니다. 공식 카탈로그 검색과 개인별 자격 판정은 분리해, CSV 요약만으로 자격을 판정하지 않습니다.']},
+  {l:'Screens',h:'주요 화면',gallery:{type:'phone',items:[['img/bokji-home.jpg','홈 · 출발 조건과 추천 경로'],['img/bokji-map.jpg','복지지도 · 경로 탐색'],['img/bokji-route.jpg','내 경로 · 단계별 안내'],['img/bokji-my.jpg','내 조건 · 조건 변경']]}},
+  {l:'Status',h:'현재 상태',p:['실직한 1인 가구 시나리오로 동작하는 웹 프로토타입입니다. 공식 기준과 대조한 판정은 국민취업지원제도 I유형까지이고, AI 설명은 서버 API와 응답 검증까지 구현했으며 실제 모델 호출 검증은 다음 단계입니다.']}
+ ]},
 haenggan:{cat:'personal',color:'c-sage',kind:'Social Reading',year:'2026',scope:'Personal',title:'행간',sub:'함께 읽는 전자책 서비스',
  desc:'읽은 위치까지만 친구의 밑줄과 메모가 공개되는 함께 읽기 서비스',
  tags:['Next.js','Supabase','epub.js'],impl:'진행도 연동 공개 · 참여자별 색상 · 초대 코드',
@@ -1035,12 +1053,12 @@ spark:{cat:'personal',color:'c-peach',kind:'Taxonomy Tool',year:'2026',scope:'Pe
 };
 const PC={eaai:['#E2E7EE','#1E2632'],tripick:['#DCEFE4','#1C2E25'],jon:['#E0EAF5','#1D2734'],gsb:['#F3E3E6','#33242A'],
   chaeum:['#F4E6D6','#33291F'],speakup:['#E6E2F3','#28243A'],tosstalk:['#F5ECCB','#332E1C'],haenggan:['#E3E9DA','#262E22'],
-  vine:['#D9ECE8','#1D2E2B'],prism:['#E2E5F5','#222638'],spark:['#F6E0D6','#36261F'],syne:['#E1E6EC','#1C2229']};
+  vine:['#D9ECE8','#1D2E2B'],prism:['#E2E5F5','#222638'],spark:['#F6E0D6','#36261F'],syne:['#E1E6EC','#1C2229'],bokji:['#DCEEE2','#1B2C22']};
 const pcs=k=>`--cl:${PC[k][0]};--cd:${PC[k][1]}`;
 const FEATURED=['eaai','tripick','jon','gsb'];
-const LISTS={personal:['eaai','syne','gsb','haenggan','vine','prism','spark'],team:['tripick','jon','chaeum','speakup','tosstalk'],awards:['eaai','chaeum','speakup','jon','tosstalk']};
+const LISTS={personal:['eaai','syne','gsb','bokji','haenggan','vine','prism','spark'],team:['tripick','jon','chaeum','speakup','tosstalk'],awards:['eaai','chaeum','speakup','jon','tosstalk']};
 const NAMES={personal:'Personal',team:'Team',awards:'Awards'};
-const ALL=['eaai','tripick','jon','syne','gsb','chaeum','speakup','tosstalk','haenggan','vine','prism','spark'];
+const ALL=['eaai','tripick','jon','syne','gsb','bokji','chaeum','speakup','tosstalk','haenggan','vine','prism','spark'];
 const VIEWS=['home','about','projects','personal','team','awards','contact'];
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const pad=n=>String(n).padStart(2,'0');
