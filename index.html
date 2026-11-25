@@ -162,18 +162,18 @@ nav:has(.sheet.open) .cats .kc{stroke:var(--tint)}
 .htab{position:relative;z-index:1;margin:0;padding:6px 24px;list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:20px}
 .htab>div,.htab li{border-top:1px solid var(--line)}
 .htab>div:first-child,.htab li:first-child{border-top:0}
-.htab>div{display:grid;grid-template-columns:6.5em minmax(0,1fr);gap:16px;align-items:baseline;padding:14px 0;font-size:14px}
-.htab dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.htab>div{display:grid;grid-template-columns:6.2em minmax(0,1fr);gap:14px;align-items:baseline;padding:10px 0;font-size:13.5px;line-height:1.55}
+.htab dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .htab dd{margin:0}
 .htab dd span{white-space:nowrap}
-.htab dd i{font-style:normal;color:var(--muted);opacity:.45;margin-inline:7px}
-.htab a{display:grid;grid-template-columns:3.4em minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:14px 0;text-decoration:none;font-size:14px;transition:color .2s ease}
+.htab dd i{font-style:normal;color:var(--muted);opacity:.5;margin-inline:5px}
+.htab a{display:grid;grid-template-columns:3.4em minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:10px 0;text-decoration:none;font-size:13.5px;line-height:1.55;transition:color .2s ease}
 .htab a .y{font-family:var(--mono);font-size:11.5px;color:var(--blue)}
 .htab a .p{font-size:12.5px;color:var(--muted)}
 .htab a[href]:hover .n{color:var(--blue)}
 .hrec .hsec-h{position:relative;z-index:1}
 @media (max-width:1000px){.hpair{grid-template-columns:minmax(0,1fr);gap:0}}
-@media (max-width:640px){.hpair .hsec{margin-top:48px}.htab{padding:4px 16px;border-radius:16px}.htab>div,.htab a{padding:12px 0}}
+@media (max-width:640px){.hpair .hsec{margin-top:48px}.htab{padding:4px 16px;border-radius:16px}.htab>div{padding:8px 0}.htab a{padding:12px 0}}
 @media (max-width:900px){.hw{grid-template-columns:minmax(0,1fr);gap:16px}.hw-card{flex-direction:row}.hw-card .cover{width:42%;flex:none;aspect-ratio:auto;padding:16px 14px 0}.hw-b{align-content:center}}
 @media (max-width:640px){.hsec{margin-top:48px}.sh + .hsec{margin-top:40px}.hsec-h{margin-bottom:14px}
  .hw{gap:10px}.hw-card{flex-direction:row;border-radius:16px;align-items:stretch}
@@ -183,7 +183,7 @@ nav:has(.sheet.open) .cats .kc{stroke:var(--tint)}
  .hw-card .cover:has(.screen){padding:0 10px;display:flex;align-items:center;justify-content:center}.hw-card .cover:has(.screen)::before{display:none}.hw-card .cover:has(.screen)::after{height:30%}.hw-card .cover .screen{height:auto;width:100%;margin-top:-6px}.hw-card .cover .screen img{width:100%;height:auto}.hw-card .screen{padding:4px;border-radius:7px}.hw-card .screen img,.hw-card .screen::after{border-radius:3px}.hw-card .screen::after{inset:4px}
  .hw-card:hover{transform:none}
  .hw-b{padding:12px 14px;gap:3px;align-content:center;min-width:0}.hw-b .k{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hw-b b{font-size:16px}.hw-b p{font-size:12.5px;line-height:1.5}
- .htab>div,.htab a{grid-template-columns:minmax(0,1fr)!important;gap:2px!important}.htab .p{justify-self:start}}
+ .htab a{grid-template-columns:minmax(0,1fr)!important;gap:2px!important}.htab>div{grid-template-columns:5.6em minmax(0,1fr);gap:8px;font-size:13px}.htab .p{justify-self:start}}
 /* recognition */
 .recog{position:relative;border-block:1px solid var(--line);padding-block:28px;display:grid;grid-template-columns:9em minmax(0,1fr);gap:32px;align-items:start}
 .recog ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:14px}
@@ -1119,7 +1119,7 @@ function cardHTML(k,i){const p=P[k];const cats=Object.keys(LISTS).filter(L=>LIST
 document.getElementById('list-projects').innerHTML=ALL.map(cardHTML).join('');
 const HOME_WORK=['eaai','syne','tripick'];
 document.getElementById('featured').innerHTML=HOME_WORK.map(k=>{const p=P[k];return `<a class="hw-card" href="#${k}"><div class="cover" style="${pcs(k)}">${coverHTML(p)}</div><div class="hw-b"><span class="k">${esc(p.kind)} · ${esc(p.scope)}</span><b>${esc(p.title)}</b><p>${esc(p.desc)}</p></div></a>`}).join('');
-document.getElementById('home-stack').innerHTML=[...document.querySelectorAll('#skills-about>div')].map(d=>`<div><dt>${esc(d.querySelector('span').textContent)}</dt><dd>${[...d.querySelectorAll('li')].map(l=>`<span>${esc(l.textContent)}</span>`).join('<i>/</i> ')}</dd></div>`).join('');
+document.getElementById('home-stack').innerHTML=[...document.querySelectorAll('#skills-about>div')].map(d=>`<div><dt>${esc(d.querySelector('span').textContent)}</dt><dd>${[...d.querySelectorAll('li')].map(l=>`<span>${esc(l.textContent)}</span>`).join('<i>·</i> ')}</dd></div>`).join('');
 const REC=[['2026','오픈소스 SW 아이디어 해커톤 캠프','최우수상','chaeum'],['2026','산업통상부 공공데이터 활용 아이디어 공모전','우수상','eaai'],['2026','JBNU AI·SW 경진대회','동상','speakup'],['2026','호남권 SW창업 아이디어 경진대회','장려상','jon'],['2025','오픈소스 SW 아이디어 해커톤 캠프','우수상','tosstalk']];
 document.getElementById('home-rec').innerHTML=REC.map(([y,n,a,k])=>`<li><a${HIDDEN.includes(k)?'':` href="#${k}"`}><span class="y">${y}</span><span class="n">${esc(n)} ${a}</span><span class="p">${esc(P[k].title)}</span></a></li>`).join('');
 document.getElementById('c-projects').textContent='Portfolio';
