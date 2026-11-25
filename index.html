@@ -170,7 +170,7 @@ nav:has(.sheet.open) .cats .kc{stroke:var(--tint)}
 .htab a{display:grid;grid-template-columns:3.4em minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:14px 0;text-decoration:none;font-size:14px;transition:color .2s ease}
 .htab a .y{font-family:var(--mono);font-size:11.5px;color:var(--blue)}
 .htab a .p{font-size:12.5px;color:var(--muted)}
-.htab a:hover .n{color:var(--blue)}
+.htab a[href]:hover .n{color:var(--blue)}
 .hrec .hsec-h{position:relative;z-index:1}
 @media (max-width:1000px){.hpair{grid-template-columns:minmax(0,1fr);gap:0}}
 @media (max-width:640px){.hpair .hsec{margin-top:48px}.htab{padding:4px 16px;border-radius:16px}.htab>div,.htab a{padding:12px 0}}
@@ -799,7 +799,7 @@ nav{margin-inline:calc(50% - 50vw);padding-inline:max(16px,env(safe-area-inset-l
     <div><span class="y">2026</span><span>제14회 산업통상부 공공데이터 활용 아이디어 공모전 (제품 및 서비스 개발 부문) 우수상 (한국무역보험공사 사장상)</span><a class="p" href="#eaai">EAAI</a></div>
     <div><span class="y">2026</span><span>2026 JBNU AI·SW 경진대회 (SW부문) 동상</span><a class="p" href="#speakup">SpeakUp</a></div>
     <div><span class="y">2026</span><span>제3회 호남권 SW창업 아이디어 경진대회 장려상</span><a class="p" href="#jon">J:ON</a></div>
-    <div><span class="y">2025</span><span>2025 오픈소스 SW 아이디어 해커톤 캠프 우수상</span><a class="p" href="#tosstalk">Toss-Talk</a></div>
+    <div><span class="y">2025</span><span>2025 오픈소스 SW 아이디어 해커톤 캠프 우수상</span><span class="p">Toss-Talk</span></div>
       </div>
     </div>
     <dl class="pf-r">
@@ -840,7 +840,7 @@ nav{margin-inline:calc(50% - 50vw);padding-inline:max(16px,env(safe-area-inset-l
     <div><span class="y">2026</span><span>제14회 산업통상부 공공데이터 활용 아이디어 공모전 (제품 및 서비스 개발 부문) 우수상 (한국무역보험공사 사장상)</span><a class="p" href="#eaai">EAAI</a></div>
     <div><span class="y">2026</span><span>2026 JBNU AI·SW 경진대회 (SW부문) 동상</span><a class="p" href="#speakup">SpeakUp</a></div>
     <div><span class="y">2026</span><span>제3회 호남권 SW창업 아이디어 경진대회 장려상</span><a class="p" href="#jon">J:ON</a></div>
-    <div><span class="y">2025</span><span>2025 오픈소스 SW 아이디어 해커톤 캠프 우수상</span><a class="p" href="#tosstalk">Toss-Talk</a></div>
+    <div><span class="y">2025</span><span>2025 오픈소스 SW 아이디어 해커톤 캠프 우수상</span><span class="p">Toss-Talk</span></div>
   </div>
   <div class="grid" id="list-projects"></div>
   <div hidden id="ph-icons"><svg class="ph-ic" data-f="personal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 9.5h1M9.5 9.5h1M13 9.5h1M16.5 9.5h1.5M6 12.5h1.5M10 12.5h1M13.5 12.5h1M17 12.5h1M8 15.5h8"/></svg><svg class="ph-ic" data-f="team" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3 19.5c.8-3.3 3.1-5 6-5s5.2 1.7 6 5"/><circle cx="16.5" cy="9.5" r="2.6"/><path d="M16 14.6c2.6-.2 4.4 1.3 5 4.4"/></svg><svg class="ph-ic" data-f="awards" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4.5v1.5A3 3 0 0 0 7.5 10.5M17 6h2.5v1.5a3 3 0 0 1-3 3M12 14v3.5M8.5 20.5h7M9.5 17.5h5"/></svg></div>
@@ -1089,8 +1089,11 @@ const PC={eaai:['#E2E7EE','#1E2632'],tripick:['#DCEFE4','#1C2E25'],jon:['#E0EAF5
 const pcs=k=>`--cl:${PC[k][0]};--cd:${PC[k][1]}`;
 const FEATURED=['eaai','tripick','jon','gsb'];
 const LISTS={personal:['eaai','syne','gsb','bokji','haenggan','vine','prism','spark'],team:['tripick','jon','chaeum','speakup','tosstalk'],awards:['eaai','chaeum','speakup','jon','tosstalk']};
+// 목록에서 숨긴 프로젝트 (데이터는 유지, 다시 올리려면 여기서 빼면 됨)
+const HIDDEN=['gsb','vine','haenggan','tosstalk','spark','prism'];
+for(const L in LISTS) LISTS[L]=LISTS[L].filter(k=>!HIDDEN.includes(k));
 const NAMES={personal:'Personal',team:'Team',awards:'Awards'};
-const ALL=['eaai','tripick','jon','syne','gsb','bokji','chaeum','speakup','tosstalk','haenggan','vine','prism','spark'];
+const ALL=['eaai','tripick','jon','syne','gsb','bokji','chaeum','speakup','tosstalk','haenggan','vine','prism','spark'].filter(k=>!HIDDEN.includes(k));
 const VIEWS=['home','about','projects','contact'];
 const FILTERS=['projects','personal','team','awards'];
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -1118,7 +1121,7 @@ const HOME_WORK=['eaai','syne','tripick'];
 document.getElementById('featured').innerHTML=HOME_WORK.map(k=>{const p=P[k];return `<a class="hw-card" href="#${k}"><div class="cover" style="${pcs(k)}">${coverHTML(p)}</div><div class="hw-b"><span class="k">${esc(p.kind)} · ${esc(p.scope)}</span><b>${esc(p.title)}</b><p>${esc(p.desc)}</p></div></a>`}).join('');
 document.getElementById('home-stack').innerHTML=[...document.querySelectorAll('#skills-about>div')].map(d=>`<div><dt>${esc(d.querySelector('span').textContent)}</dt><dd>${[...d.querySelectorAll('li')].map(l=>`<span>${esc(l.textContent)}</span>`).join('<i>/</i> ')}</dd></div>`).join('');
 const REC=[['2026','오픈소스 SW 아이디어 해커톤 캠프','최우수상','chaeum'],['2026','산업통상부 공공데이터 활용 아이디어 공모전','우수상','eaai'],['2026','JBNU AI·SW 경진대회','동상','speakup'],['2026','호남권 SW창업 아이디어 경진대회','장려상','jon'],['2025','오픈소스 SW 아이디어 해커톤 캠프','우수상','tosstalk']];
-document.getElementById('home-rec').innerHTML=REC.map(([y,n,a,k])=>`<li><a href="#${k}"><span class="y">${y}</span><span class="n">${esc(n)} ${a}</span><span class="p">${esc(P[k].title)}</span></a></li>`).join('');
+document.getElementById('home-rec').innerHTML=REC.map(([y,n,a,k])=>`<li><a${HIDDEN.includes(k)?'':` href="#${k}"`}><span class="y">${y}</span><span class="n">${esc(n)} ${a}</span><span class="p">${esc(P[k].title)}</span></a></li>`).join('');
 document.getElementById('c-projects').textContent='Portfolio';
 const fbtns=[...document.querySelectorAll('#filters button')];
 const ICON_ALL=document.querySelector('#v-projects .ph-ic').cloneNode(true);
@@ -1203,7 +1206,7 @@ function route(){
   closeAll(); setSheet(false); setPop(false);
   if(lastView==='projects') projScroll=window.scrollY;
   let current='home',view;
-  if(P[h]){
+  if(P[h]&&!HIDDEN.includes(h)){
     document.getElementById('v-detail').innerHTML=detailHTML(h); show('v-detail');
     document.title=P[h].title+' · ZohIjin'; current='projects'; view='detail'; window.scrollTo({top:0,behavior:'instant'});
   }else if(FILTERS.includes(h)){
